@@ -1,2 +1,1 @@
-# 42-Cursus
-42-Project
+# some of project from 42-Cursus
