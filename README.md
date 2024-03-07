@@ -1,2 +1,2 @@
-# some project of 42-Cursus
+# some projects of 42-Cursus
 
