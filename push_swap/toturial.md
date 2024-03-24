@@ -33,7 +33,7 @@
 ![x](images1/img7.png)
 
 ---
-#### expand chunk
+#### expand chunk update `start` and `end` of chunk and add new numbers to (chunk) `set`
 ![x](images1/img8.png)
 
 ---
