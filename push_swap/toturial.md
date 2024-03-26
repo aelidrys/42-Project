@@ -13,7 +13,7 @@
 ![x](images1/img2.png)
 
 ---
-#### set `stack_size` & `midlle` & `start` & `end` & `set`, varible `set` represent the chunk, `middle = stack_size/2`, `start = midddle - range_size/2`, `end = midddle + range_size/2`, `range_size` for your choise
+#### initialize `stack_size` & `midlle` & `start` & `end` & `set`, varible `set` represent the chunk, `middle = stack_size/2`, `start = midddle - range_size/2`, `end = midddle + range_size/2`, `range_size` for your choise
 ![x](images1/img3.png)
 
 ---
