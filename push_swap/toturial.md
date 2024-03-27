@@ -90,7 +90,7 @@
 ![x](images2/img7.png)
 
 ---
-#### cno condition from the three conditions has been achieved, case (4) the choised way is `rrb`
+#### no condition from the three conditions has been achieved, case (4) the choised way is `rrb`
 ![x](images2/img8.png)
 
 ---
