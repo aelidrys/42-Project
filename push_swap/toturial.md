@@ -56,13 +56,13 @@
 - [x] ___second part contain tow steaps___
 - ### (1) specify the number that have the max order and push it to stack `a` `figure 2`, this steap is mandatory
 - ### (2) complete the pushing of remaining numbers to stack `a` with follow the following conditions `figures [3,...,12]`
-    - #### cond1: if the `max_order` in the top of `b` push it to `a`
-    - #### cond2: if cond1 is False and the `max_order` existe in the last of `a` use `rra` to move it to the top of `a`
-    - #### cond3: if both of cond1 and cond2 is False and the element that existe in the top of `b` lower than the element that in the last of `a` push it to `a` and rotate it by useing `pa` + `ra`
-    - #### (4) if all of the previos conditions is False,  make the `max_order` in the top and push it to `a` there is tow way to make it in the top `rb` or `rrb` you should choise the way that give the least number of instructions
+    - #### cond1: if the `max_order` in the top of stack `b` push it to stack `a`
+    - #### cond2: if cond1 is False and the `max_order` existe in the last of `a` use `rra` to move it to the top of stack `a`
+    - #### cond3: if both of cond1 and cond2 is False and the element that existe in the top of `b` lower than the element that in the last of stack `a` push it to stack `a` and rotate it by useing `pa` + `ra`
+    - #### (4) if all of the previos conditions is False,  make the `max_order` in the top and push it to stack `a` there is tow way to make it in the top `rb` or `rrb` you should choise the way that give the least number of instructions
 ---
 #### specify the `max_order` the `max_order` is the order of the larger number that has not taken its correct position, in first it will be the `stack_size`, once the larger number take the correct position `max_order` will decrement to be the order of the next larger number
-#### `InLastOf_a` represent the number of elements in `a` bellow of the first `max_order` in this case the first `max_order` is 8 and `ILO_a` is the set of numbers that existe bellow of order 8
+#### `InLastOf_a` represent the number of elements in stack `a` bellow of the first `max_order` in this example the first `max_order` is 8 and `ILO_a` is the set of numbers that existe bellow of order 8
 ![x](images2/img1.png)
 
 ---
