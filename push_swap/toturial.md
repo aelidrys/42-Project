@@ -54,8 +54,8 @@
 
 ---
 - [x] ___second part contain tow steaps___
-- ### (1) specify the number that have the max order and push it to `a` `figure 2`, this steap is mandatory
-- ### (2) complete the pushing of remaining numbers with follow the following conditions `figures [3,...,12]`
+- ### (1) specify the number that have the max order and push it to stack `a` `figure 2`, this steap is mandatory
+- ### (2) complete the pushing of remaining numbers to stack `a` with follow the following conditions `figures [3,...,12]`
     - #### cond1: if the `max_order` in the top of `b` push it to `a`
     - #### cond2: if cond1 is False and the `max_order` existe in the last of `a` use `rra` to move it to the top of `a`
     - #### cond3: if both of cond1 and cond2 is False and the element that existe in the top of `b` lower than the element that in the last of `a` push it to `a` and rotate it by useing `pa` + `ra`
