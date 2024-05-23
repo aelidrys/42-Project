@@ -18,23 +18,24 @@
 ## PLANING
 - ## Parcine
 
-	- [x] parce first element
-	- [x] parce map
+	- parce first element
+	- parce map
 
 - ## Ray_cast
-	- [x] draw a simple map
-	- [x] make player move
-	- [x] put one ray
-	- [x] make ray rotate
-	- [x] determine the direction `<` `^` `>` and `v`
+	- draw a simple 2D game that have three elements player `P` and walls `1` and free spaces `0`
+ 		- draw the walls and free spaces as a squeres, You can also draw the player as a square, but it is better to draw him in a circular shape
+	- make the player `P` move in the free spaces `0` and not in the walls `1` 
+	- put one ray from the center of player shape, just a small ray for testing
+	- make this previos ray rotate
+	- determine the direction `N` or `S` or `W` or `E`
 	***
-	- [x] determine the coordinates `there is thre steps`
-		- [x] `1` det coordinates that is represent a wall at the intersictions with __x__
-		- [x] `2` det coordinates that is represent a wall at the intersictions with __y__
-			- in the two steps above we should write a function that calculate the coord `(x,y)`
+	- determine the coordinates `there is thre steps`
+		- `1` determine coordinates that is represent a wall at the intersictions with __x__
+		- `2` determine coordinates that is represent a wall at the intersictions with __y__
+			- in the two steps above you should create a function that calculate the coord `(x,y)`
 				and other one that check if you can  move to this coordinates
-		- [x] `3` choos the coordinates that have a ray __R__ less than other
-	- [x] make the ray stop if there are a wall in the next position
+		- `3` choice the coordinates that have a ray __R__ less than other
+	- make the ray stop if there are a wall in the next position
 
 *** 
 ### relationships of trigonometric circle
@@ -58,12 +59,12 @@
 ![](img/dda_x.png)
 ***
 - ## Draw Walls
-	- [x] darwing walls
+	- darwing walls
  	- calculate the hiegth of wall `H_wall = grid_size * H_window / R`
   	 you can use other method to calculate the height of wall but you should
-  	 divise by R alwas
+  	 divise by R alwys
     	- then drawing the walls, for every ray there is a wall with `1 px` in the width and ther height is `H_wall px`
-	- [x] draw walls with texturs
+	- draw walls with texturs
 
 ---
 #### link of github repo -> [ayoub-elidryssy](https://github.com/gxxpython/cub)
