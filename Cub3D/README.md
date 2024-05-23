@@ -6,6 +6,7 @@
 
 - ## how to run the program cub3D_bonus
   - first if you dont have the mlx library in your device you should install it if you are interested
+  	- [install mlx 42](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#installation) 
   -  run this command bellow to create an executable named cub3D_bonus
   	```
   	make bonus
