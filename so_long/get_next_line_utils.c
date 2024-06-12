@@ -48,21 +48,6 @@ size_t	a_lent(char *s)
 	return (a);
 }
 
-void	*ft_calloc(size_t c, size_t s)
-{
-	void	*ptr;
-	size_t	q;
-
-	q = 0;
-	if (s > 0 && c > SIZE_MAX / s)
-		return (NULL);
-	ptr = (char *)malloc(c * s);
-	if (!ptr)
-		return (NULL);
-	while (q < c * s)
-		((char *)ptr)[q++] = 0;
-	return (ptr);
-}
 
 char	*ft_strdup1(char *s1, int a, int j)
 {

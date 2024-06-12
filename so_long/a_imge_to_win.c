@@ -67,7 +67,8 @@ void	sw1_img(t_gam *gam, int k, int c)
 
 void	plyr_movs(t_gam *gam, int x, int y, int s)
 {
-	print_numbr(++gam->movs, gam->movs);
+	gam->movs++;
+	print_numbr(gam->movs, gam->movs);
 	if (gam->map[y][x] == 'e')
 		print_str("YOU WIN\n");
 	if (s == 0 || s == 1)

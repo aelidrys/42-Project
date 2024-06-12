@@ -40,7 +40,7 @@ char	*read_line(int fd, char *d)
 	int		x;
 
 	x = 1;
-	s = ft_calloc(BUFFER_SIZE + 1, 1);
+	s = calloc(BUFFER_SIZE + 1, 1);
 	while (1)
 	{
 		x = read(fd, s, BUFFER_SIZE);

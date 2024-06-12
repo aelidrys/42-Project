@@ -91,9 +91,7 @@ int	check_new_line(char *p)
 
 int	check_map(t_gam *gam, char *p)
 {
-	int		n;
 
-	n = -1;
 	gam->map1 = spl(p, '\n');
 	if (!gam->map1)
 	{

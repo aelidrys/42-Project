@@ -73,7 +73,7 @@ int	main(int a, char **av)
 	gam.win = mlx_new_window(gam.mlx, a_lent(gam.map[0]) * 70,
 			arg_lent(gam.map) * 70, "WOLF & SHEEP");
 	std_gam(&gam);
-	mlx_hook(gam.win, 2, 0, a_event, &gam);
-	mlx_hook(gam.win, 17, 0, ft_exit, 0);
+	mlx_hook(gam.win, 2, (1L<<0), a_event, &gam);
+	mlx_hook(gam.win, 17, (1L<<0), ft_exit, 0);
 	mlx_loop(gam.mlx);
 }

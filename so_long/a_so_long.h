@@ -17,7 +17,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include <mlx.h>
+# include "minilibx-linux/mlx.h"
+# include <X11/Xlib.h> 
 # include "get_next_line.h"
 
 typedef struct s_imge

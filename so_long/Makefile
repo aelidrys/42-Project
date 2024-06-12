@@ -11,17 +11,18 @@ NAME_BONUS = so_long_bonus
 
 CFLAGS = -Wall -Wextra -Werror
 
-MLX_FLAGS = -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
+MLX_MFLAGS = -lmlx -framework OpenGL -framework AppKit
+MLX_UFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(MLX_FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME) $(MLX_UFLAGS)
 
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(BONUS_OBJ)
-	$(CC) $(MLX_FLAGS) $(BONUS_OBJ) -o $(NAME_BONUS)
+	$(CC)  $(BONUS_OBJ) -o $(NAME_BONUS) $(MLX_UFLAGS)
 
 clean :
 	rm -f $(OBJ) $(BONUS_OBJ)
