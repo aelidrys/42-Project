@@ -1,6 +1,6 @@
 # P_S toturial
 ## simple explanation of chunks algorithm in push swap
-### This algorithm is designed for larger amount of integers. This algorithm splits stack `a` into smaller chunks which are pushed to stack `b`
+##### This algorithm is designed for larger amount of integers. This algorithm splits stack `a` into smaller chunks which are pushed to stack `b`
 - [X] ___first part contain three staeps___  
 - ### (1) ranking the elements of stack `a` *`figure 2`*, once the numbers is ordered you can use just the order of each number to sort it
 - ### (2) specifying the `stack_size` and the `midlle` of stack `a` and the `start` & `end` of chunk, and `set` of elements *`figure 3`*
