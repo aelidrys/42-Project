@@ -16,27 +16,30 @@
 	```
 	./cub3d_bonus maps/map_bonus.cub
 	```
-## PLANING
-- ## Parcine
+# PLANING
+## Parcine
 
 	- parce first element
 	- parce map
 
-- ## Ray_cast
-	- draw a simple 2D game that have three elements player `P` and walls `1` and free spaces `0`
- 		- draw the walls and free spaces as a squeres, You can also draw the player as a square, but it is better to draw him in a circular shape
-	- make the player `P` move in the free spaces `0` and not in the walls `1` 
-	- put one ray from the center of player shape, just a small ray for testing
-	- make this previos ray rotate
-	- determine the direction `N` or `S` or `W` or `E`
-	***
-	- determine the coordinates `there is thre steps`
-		- `1` determine coordinates that is represent a wall at the intersictions with __x__
-		- `2` determine coordinates that is represent a wall at the intersictions with __y__
-			- in the two steps above you should create a function that calculate the coord `(x,y)`
+## Ray_cast
+- draw a simple 2D game that have three elements player `P` and walls `1` and free spaces `0`
+ 	- draw the walls and free spaces as a squeres, You can also draw the player as a square, but it is better to draw him in a circular shape
+- make the player `P` move in the free spaces `0` and not in the walls `1` 
+- put one ray from the center of player shape, just a small ray for testing
+- make this previos ray rotate
+- determine the direction `N` or `S` or `W` or `E`
+***
+### DDA algorithm
+#### definition :
+DDA is a fast algorithm typically used on square grids to find which squares a line or ray hits. So we can also use it to find which squares of the map our ray hits, and stop the algorithm once a square that is a wall is hit.
+- determine the coordinates `there is thre steps`
+	- `1` determine coordinates that is represent a wall at the intersiction with __x__ Horizontal
+	- `2` determine coordinates that is represent a wall at the intersiction with __y__ Vertical
+		- in the two steps above you should create a function that calculate the coord `(x,y)`
 				and other one that check if you can  move to this coordinates
-		- `3` choice the coordinates that have a ray __R__ less than other
-	- make the ray stop if there are a wall in the next position
+	- `3` choice the coordinates that have a ray __R__ less than other
+- make the ray stop if there are a wall in the next position
 
 *** 
 ### relationships of trigonometric circle
@@ -55,9 +58,9 @@
 
 
 ### determine the coordonate of intersiction with y
-![](img/dda_y.png)
+<img src="img/dda_y.png" alt="" width=500></img>
 ### determine the coordonate of intersiction with x
-![](img/dda_x.png)
+<img src="img/dda_x.png" alt="" width=500></img>
 ***
 - ## Draw Walls
 	- darwing walls
