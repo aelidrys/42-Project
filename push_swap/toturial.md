@@ -10,11 +10,12 @@
 ![x](images1/img1.png)
 
 ---
-#### ranking the elements of stack `a`, the rank of each number is represented by the red color in side it
-![x](images1/img2.png)
+<h4> ranking the elements of stack <span style='color:Orange;'>`a`</span>, the rank of each number is represented by the red color in side it</h4>
+
+<img src='images1/img2.png'></img>
 
 ---
-#### initialize `stack_size` & `midlle` & `start` & `end` & `set`, varible `set` represent the chunk or range, `middle = stack_size/2`, `start = midddle - range_size/2`, `end = midddle + range_size/2`, `range_size` for your choise
+#### initialize `stack_size` & `midlle` & `start` & `end` & `set`, varible `set` represent the chunk or range, `middle = stack_size/2`, `start = midddle - range_size/2`, `end = midddle + range_size/2`, `range_size` of your choise ofcourse you should choose a `range_size` that give the best result. for example in a `set` that containe a number of element between 20 >= num_of_elem <= 100 i choose 32 as a `range_size`
 ![x](images1/img3.png)
 
 ---
