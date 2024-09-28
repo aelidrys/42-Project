@@ -78,7 +78,6 @@ DDA is a fast algorithm typically used on square grids to find which squares a l
 	- draw walls with texturs
 
 ---
-#### Link of github repo -> [ayoub-elidryssy](https://github.com/gxxpython/cub)
 ### Sum sources
 [RAYCAST TOTURIAL](https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/) 
 
