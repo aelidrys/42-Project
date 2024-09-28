@@ -6,7 +6,8 @@
 
 - ## how to run the program cub3D_bonus
   - first if you dont have the mlx library in your device you should install it if you are interested
-  	- [install mlx 42](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#installation) 
+  	- [install mlx 42](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#installation) (choise the installition that compatible with your device (linux, macOS, ...) and follow the steaps one by one
+   	- __Note:__ the name of the repository of mlx that you will clone it from github if you don't have mlx already in your device should be `mlx_Linux` 
   -  run this command bellow to create an executable named cub3D_bonus
   	```
   	make bonus
@@ -31,7 +32,7 @@
 - determine the direction `N` or `S` or `W` or `E`
 ***
 ### DDA algorithm
-#### definition :
+#### Definition :
 DDA is a fast algorithm typically used on square grids to find which squares a line or ray hits. So we can also use it to find which squares of the map our ray hits, and stop the algorithm once a square that is a wall is hit.
 - determine the coordinates `there is thre steps`
 	- `1` determine coordinates that is represent a wall at the intersiction with __x__ Horizontal
@@ -42,7 +43,10 @@ DDA is a fast algorithm typically used on square grids to find which squares a l
 - make the ray stop if there are a wall in the next position
 
 *** 
-### relationships of trigonometric circle
+### Relationships of trigonometric circle
+<img src='https://d20khd7ddkh5ls.cloudfront.net/trig02.png' width=500px>
+
+##### `x: adjacent` `y: = opposite` `R: hypotenuse`
 
 		cos(o) = x/R           &&             sin(o) = y/R
 
@@ -55,11 +59,14 @@ DDA is a fast algorithm typically used on square grids to find which squares a l
 
 
 ***
+### Signe of `cos` and `sin` and `tan` in the four parts of the trigonometry circle
+<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTojZfDkFHzNlRfyAygWAWNmIua3lN5znZgaQ&s' width=400px>
+***
 
 
-### determine the coordonate of intersiction with y
+### Determine the coordonate of intersiction with y
 <img src="img/dda_y.png" alt="" width=500></img>
-### determine the coordonate of intersiction with x
+### Determine the coordonate of intersiction with x
 <img src="img/dda_x.png" alt="" width=500></img>
 ***
 - ## Draw Walls
@@ -71,8 +78,8 @@ DDA is a fast algorithm typically used on square grids to find which squares a l
 	- draw walls with texturs
 
 ---
-#### link of github repo -> [ayoub-elidryssy](https://github.com/gxxpython/cub)
-### sum sources
+#### Link of github repo -> [ayoub-elidryssy](https://github.com/gxxpython/cub)
+### Sum sources
 [RAYCAST TOTURIAL](https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/) 
 
 
