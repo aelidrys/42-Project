@@ -6,10 +6,10 @@
 
 <div align='center'><h2>General idea</h2></div>
 <p>X amount of philosophers sit at a round table with bowls of food.</p>
-<p>Each philosopher have a Fork placed in right of it(doesn't really change if they place it on the right or left).</p>
+<p>Each philosopher have a fork placed in right of it (doesn't really change if they place it on the right or left).</p>
 <p>Number of forks at a table is the same as philosophers.</p>
 <p>Philosopher can do three things: eat, think or sleep.</p>
-<p> A philosopher cannot eat with one fork, so in order to eat he must pick up his fork and the fork on his left.</p>
+<p>A philosopher cannot eat with one fork, so in order to eat he must pick up his fork and the fork on his left.</p>
 
 lets assume that we have four philosophers sitting at the tabe.
 <img src='philo_01.png' alt='No img' width=500>
