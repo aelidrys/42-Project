@@ -13,7 +13,7 @@
 
 lets assume that we have four philosophers sitting at the tabe.
 <img src='philo_01.png' alt='No img' width=500>
-philosopher 1 wants to eat, so he take his fork and the fork on his left (fork of philo 4), philosophers 2 and 4 cannot eat because just one fork available for each one of them, philosopher 3 can eat if both of philo 2 and 4 don't take any fork
+philosopher 1 wants to eat, so he take his fork and the fork on his left (fork of philo 2), philosophers 2 and 4 cannot eat because just one fork available for each one of them, philosopher 3 can eat if both of philo 2 and 4 don't take any fork
 
 
 <div align='center'><h2>Resources</h2></div>
