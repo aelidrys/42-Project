@@ -16,11 +16,11 @@
 
 <h4>lets assume that we have four philosophers sitting at the table. there is one fork for each philos in his right (for example fork of philo 1 exist between him and philo 4)</h4>
 
-<img src='img1.png' alt='No img' width=500>
+<img src='imgs/img1.png' alt='No img' width=500>
 
 <h4>as we mentioned above the philo cannot eat with one fork, so just two philos can eat in the same time, after they finish the two remaining philos can eating, one of solutions is to split the philos to two sets odd set and even set</h4>
 
-<img src="img3.png" alt='No img' width=500>
+<img src="imgs/img3.png" alt='No img' width=500>
 
 
 
