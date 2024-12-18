@@ -24,12 +24,12 @@
 	- parce map
 
 ## Ray_cast
-- draw a simple 2D game that have three elements player `P` and walls `1` and free spaces `0`
+- draw a simple 2D game that have three elements player and walls and free spaces
  	- draw the walls and free spaces as a squeres, You can also draw the player as a square, but it is better to draw him in a circular shape
-- make the player `P` move in the free spaces `0` and not in the walls `1` 
-- put one ray from the center of player shape, just a small ray for testing
+- make the player move in the free spaces and not in the walls 
+- put one ray from the center of the player shape, just a small ray for testing
 - make this previos ray rotate
-- determine the direction `N` or `S` or `W` or `E`
+- determine the direction of the player `N` or `S` or `W` or `E`
 
 <img src="img/map_to_2Dgame.png" width=500>
 
