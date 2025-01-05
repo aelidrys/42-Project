@@ -26,9 +26,9 @@ int	main(int ac, char **av)
 	cub = malloc(sizeof(t_info));
 	start_cub(cub, av);
 	draw_cub3d(cub);
-	mlx_hook(cub->mlx->win, 17, 0, ft_exit, NULL);
-	mlx_hook(cub->mlx->win, 2, 0, a_event, cub);
-	mlx_hook(cub->mlx->win, 3, 0, input_key_relese, cub);
+	mlx_hook(cub->mlx->win, 17, (1L<<0), ft_exit, NULL);
+	mlx_hook(cub->mlx->win, 2, (1L<<1), a_event, cub);
+	mlx_hook(cub->mlx->win, 3, (1L<<1), input_key_relese, cub);
 	mlx_loop_hook(cub->mlx->ptr, draw_cub3d, cub);
 	mlx_loop(cub->mlx->ptr);
 }

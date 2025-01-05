@@ -19,7 +19,7 @@ void	draw_walls(t_info *cub, t_point p)
 	int	start;
 
 	i = 0;
-	a = (cub->size / (p.r * fabs(cos(((cub->r_corner - cub->corner) * M_PI)
+	a = (cub->size / (p.r * fabs(cos(((cub->r_corner - cub->corner) * M_Pay)
 						/ 180)))) * 500;
 	if (p.dir == 'N')
 		draw_north_walls(cub, p, a);
@@ -62,7 +62,7 @@ int	rays_casting(t_info *cub, float corner, char *str)
 	cub->width = 0;
 	while (corner >= cub->r_corner)
 	{
-		cor_rad = (M_PI * cub->r_corner) / 180.0;
+		cor_rad = (M_Pay* cub->r_corner) / 180.0;
 		p = ray_cast(cub, cor_rad, str);
 		draw_walls(cub, p);
 		cub->r_corner += 0.05;

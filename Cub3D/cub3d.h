@@ -17,34 +17,22 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <mlx.h>
+# include "mlx_linux/mlx.h"
 # include <math.h>
 # include "libft/libft.h"
 
-# define MOVE_SPEED 20
-# define M_G 14
+#ifndef MOVE_SPEED
+#define MOVE_SPEED 20
+#endif
 
-typedef struct s_mlx
-{
-	void	*ptr;
-	void	*win;
-	void	*img_b;
-	void	*img_n;
-	void	*img_s;
-	void	*img_w;
-	void	*img_e;
-	void	*i_w0;
-	void	*i_w1;
-	void	*i_w2;
-	void	*i_w3;
-	void	*i_c;
-	void	*i_c1;
-	void	*k_0;
-	void	*k_1;
-	void	*k_2;
-	void	*k_3;
-	void	*p_s;
-}	t_mlx;
+#ifndef M_G
+#define M_G 14
+#endif
+
+#ifndef M_Pay
+# define M_Pay 3.14
+#endif
+
 
 typedef struct s_point
 {
@@ -67,6 +55,28 @@ typedef struct s_img
 	void			*ptr;
 	struct s_img	*next;
 }	t_img;
+
+typedef struct s_mlx
+{
+	void	*ptr;
+	void	*win;
+	void	*img_b;
+	void	*img_n;
+	void	*img_s;
+	void	*img_w;
+	void	*img_e;
+	void	*i_w0;
+	void	*i_w1;
+	void	*i_w2;
+	void	*i_w3;
+	void	*i_c;
+	void	*i_c1;
+	void	*k_0;
+	void	*k_1;
+	void	*k_2;
+	void	*k_3;
+	t_img	*p_s;
+}	t_mlx;
 
 typedef struct s_var
 {
@@ -158,7 +168,6 @@ int		draw_wapeans(t_info *cub);
 void	ft_error(char *str);
 void	motion(t_info *cub);
 int		open_door(t_info *cub);
-int		open_door(t_info *cub);
 char	**get_element(char *str);
 int		is_in_str(char *str, char c);
 void	start_cub(t_info *cub, char **av);
@@ -185,5 +194,6 @@ int		size_of_arry(char **arry);
 int		draw_cub3d(t_info *cub);
 void	stop_movs(t_info *cub);
 void	ft_free(char **str);
+void remove_bground(t_img *img_data, int t);
 
 #endif

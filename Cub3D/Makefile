@@ -42,9 +42,11 @@ OBJ = ${SRC:.c=.o}
 OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 
-CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
 
-MLX_FLAG = -lmlx -framework OpenGL -framework AppKit
+MLX_UFLAG = -lmlx -framework OpenGL -framework AppKit
+
+MLX_UFLAG = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 RM = rm -rf
 
@@ -53,26 +55,22 @@ CC = cc
 all : ${NAME}
 
 ${NAME} : ${OBJ}
-		make -C libft
-		${CC} ${CFLAGS} ${OBJ} libft/libft.a -o ${NAME} $(MLX_FLAG)
+		${CC} ${CFLAGS} ${OBJ} libft/libft.a -o ${NAME} $(MLX_UFLAG)
 
 bonus	: ${NAME_BONUS}
 
 ${NAME_BONUS} : ${OBJ_BONUS}
-		make -C libft
-		${CC} ${CFLAGS} ${OBJ_BONUS} libft/libft.a -o ${NAME_BONUS} $(MLX_FLAG)
+		${CC} ${CFLAGS} ${OBJ_BONUS} libft/libft.a -o ${NAME_BONUS} $(MLX_UFLAG)
 
 clean :
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_BONUS)
 
 clean_all :
-	make clean -C libft
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_BONUS)
 
 fclean	:	clean
-		make fclean -C libft
 		$(RM) $(NAME)
 		$(RM) $(NAME_BONUS)
 

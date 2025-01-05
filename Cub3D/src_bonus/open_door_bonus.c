@@ -56,7 +56,7 @@ void	check_open_door(t_info *cub, int key)
 	(void)key;
 	if (cub->check_o_d)
 		return ;
-	cor_rad = (M_PI * cub->corner) / 180.0;
+	cor_rad = (M_Pay* cub->corner) / 180.0;
 	det_direction(cub, cor_rad);
 	px = det_coord_x(cub, cor_rad, "1abcdefg", cub->size);
 	py = det_coord_y(cub, cor_rad, "1abcdefg", cub->size);

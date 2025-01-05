@@ -19,7 +19,7 @@ void	draw_myray(t_info *cub, float corner)
 	float	x;
 	float	y;
 
-	cor_rd = ((M_PI * corner) / 180.0000);
+	cor_rd = ((M_Pay* corner) / 180.0000);
 	x = 175;
 	y = 105;
 	r = 0;

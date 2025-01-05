@@ -55,7 +55,9 @@ void	get_xpm_file(t_info *cub)
 	cub->mlx->k_1 = mlx_xpm_file_to_image(cub->mlx->ptr, "w/k_1.xpm", &w, &h);
 	cub->mlx->k_2 = mlx_xpm_file_to_image(cub->mlx->ptr, "w/k_2.xpm", &w, &h);
 	cub->mlx->k_3 = mlx_xpm_file_to_image(cub->mlx->ptr, "w/k_3.xpm", &w, &h);
-	cub->mlx->p_s = mlx_xpm_file_to_image(cub->mlx->ptr, "w/p_s.xpm", &w, &h);
+	cub->mlx->p_s = new_img(cub, "w/p_s.xpm", 'z');
+	remove_bground(cub->mlx->p_s, 1);
+	// remove_bground(cub->mlx->p_s, 2);
 }
 
 int	mouse_view(int x, int y, t_info *cub)
@@ -75,17 +77,17 @@ int	mouse_view(int x, int y, t_info *cub)
 
 int	input_key(int key, t_info *cub)
 {
-	if (key == 53)
+	if (key == 65307)
 		exit(0);
 	if (!cub->start)
 		return (0);
-	if (key == 2)
+	if (key == 100)
 		cub->m_r = 1;
-	if (key == 0)
+	if (key == 97)
 		cub->m_l = 1;
-	if (key == 125 || key == 1)
+	if (key == 65364 || key == 115)
 		cub->m_d = 1;
-	if (key == 126 || key == 13)
+	if (key == 65362 || key == 119)
 		cub->m_u = 1;
 	return (0);
 }

@@ -34,19 +34,20 @@ void	stop_movs(t_info *cub)
 
 int	input_key_relese(int key, t_info *cub)
 {
-	if (key == 259)
+	// printf("key = %d\n", key);
+	if (key == 65307)
 		stop_movs(cub);
-	if (key == 2)
+	if (key == 100)
 		cub->m_r = 0;
-	if (key == 0)
+	if (key == 97)
 		cub->m_l = 0;
-	if (key == 125 || key == 1)
+	if (key == 65364 || key == 115)
 		cub->m_d = 0;
-	if (key == 126 || key == 13)
+	if (key == 65362 || key == 119)
 		cub->m_u = 0;
-	if (key == 124)
+	if (key == 65363)
 		cub->l_cor = 0;
-	if (key == 123)
+	if (key == 65361)
 		cub->r_cor = 0;
 	return (0);
 }

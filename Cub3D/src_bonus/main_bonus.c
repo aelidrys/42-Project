@@ -45,10 +45,10 @@ void	start_game(t_info *cub, float width, float heigth)
 		{
 			my_mlx_pixel_put1(cub->big_img, x, y,
 				get_color(img, width, heigth));
-			heigth += 0.1;
+			heigth++;
 			y++;
 		}
-		width += 0.083;
+		width++;
 		x++;
 	}
 	mlx_put_image_to_window(cub->mlx->ptr, cub->mlx->win, cub->big_img->ptr,
@@ -65,10 +65,10 @@ int	main(int ac, char **av)
 	start_cub(cub, av);
 	get_xpm_file(cub);
 	start_game(cub, 0, 0);
-	mlx_hook(cub->mlx->win, 17, 0, ft_exit, NULL);
-	mlx_hook(cub->mlx->win, 2, 0, a_event, cub);
-	mlx_hook(cub->mlx->win, 3, 0, input_key_relese, cub);
-	mlx_hook(cub->mlx->win, 6, 0, mouse_view, cub);
+	mlx_hook(cub->mlx->win, 17, (1L<<0), ft_exit, NULL);
+	mlx_hook(cub->mlx->win, 2, (1L<<0), a_event, cub);
+	mlx_hook(cub->mlx->win, 3, (1L<<1), input_key_relese, cub);
+	mlx_hook(cub->mlx->win, 6, (1L<<6), mouse_view, cub);
 	mlx_loop_hook(cub->mlx->ptr, draw_game, cub);
 	mlx_loop(cub->mlx->ptr);
 }
