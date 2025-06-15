@@ -1,0 +1,779 @@
+
+.content_index{
+    margin-left: 150px;
+    margin-right: 40px;
+  }
+  .wrapper {
+    display: grid;
+    gap: 50px !important;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 380px 350px;
+    grid-template-areas: " box2 box2 box2 box2"
+                        "box1 box1 box3 box3";
+  }
+  .wrapper .box2 h3{
+    background: linear-gradient(to right, white, rgb(255, 217, 0), white);
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .box2 .btn,
+  .send-request-friend .btn , .btn-box, .btn-box-3{
+   letter-spacing: 2px;
+   padding: 10px 20px;
+   font-family: "Titan One", sans-serif;
+   color: rgb(255, 255, 255);
+   transition: 1s;
+  }
+  .btn-box, .btn-box-3{
+    width: 150px;
+  }
+  
+  .box2 p{
+   
+  color: var(--yallow-color);
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-size: 50px;
+  }
+  
+  .box2 h3 {
+     font-family: "Shojumaru", system-ui;
+     font-weight: bold;
+     font-style: normal;
+     font-size: 70px;
+  }
+  .box2  {
+   overflow: hidden;
+   grid-area: box2;
+   background-color: #25284A;
+   background-color: var(--color-light-dark);
+   box-shadow: inset 0px -109px 98px 43px rgba(0,0,0,0.9);
+   background-size: cover;
+   background-repeat: no-repeat; 
+  }
+  
+  .box2 img:last-child{
+   animation: raj3o1 2s ;
+  
+  }
+  .box2 img:first-child{
+   animation: raj3o2 2s ;
+  }
+  
+  @keyframes raj3o1 {
+  
+   0%{
+     transform: translateX(100%);
+     opacity: 0;
+   }
+   100% {
+     transform: translateX(0);
+     opacity: 1;
+   }
+  
+  }
+  @keyframes raj3o2 {
+  
+   0%{
+     transform: translateX(-100%);
+     opacity: 0;
+   }
+   100% {
+     transform: translateX(0);
+     opacity: 1;
+   }
+  }
+  
+  .box2 img {
+   height: 100%;
+   width: auto;
+  }
+  
+  .box1 {
+    position: relative;
+    grid-area: box1;
+    background-color: #25284A;
+    background-color: var(--color-light-dark);
+    box-shadow: inset 0px -109px 98px 43px rgba(0,0,0,0.9);
+  }
+  .box3 {
+    position: relative;
+    grid-area: box3;
+    background-color: #25284A;
+    background-color: var(--color-light-dark);
+    box-shadow: inset 0px -109px 98px 43px rgba(0,0,0,0.9);
+  }
+  .ktab-box-1, .ktab-box-3{
+    font-size: 40px;
+    font-weight: 800;
+    margin: 30px 0;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  .ktab-box-3{
+    position: absolute;
+    left: 15px;
+    top:40%;
+    transform: translateY(-50%);
+    width: 50%;
+  }
+  .ktab-box-1{
+    position: absolute;
+    right: 5px;
+    top:40%;
+    transform: translateY(-50%);
+    width: 50%;
+  }
+  .text-box-1, .text-box-3{
+    background: linear-gradient(to right, white, rgb(255, 217, 0), white);
+    background-clip: text;
+    color: transparent;
+    font-size: 30px;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-left: 12px;
+  }
+  .text-home{
+    text-align:start;
+    font-size: 12px;
+    font-weight: 100;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    width: 90%;
+  }
+  
+  .box3 img, .box1 img{
+    object-fit:cover;
+    width: auto;
+    height: 120%;
+  }
+  .box3 img{
+  position: absolute;
+  right: -5px;
+  width: 50%;
+  }
+  .box1 img{
+    position: absolute;
+    left: -7px;
+    width: 50%;
+  }
+  @media (max-width: 1350px) {
+    .content_index{
+      margin-left: 95px;
+      margin-right: 0px;
+    }
+    .wrapper {
+        gap: 20px !important;
+      }
+    .btn-box, .btn-box-3{
+      width: 150px;
+      height: fit-content;
+      margin: 15px 0;
+    }
+    .ktab-box-1, .ktab-box-3{
+        font-size: 24px;
+        font-weight: 800;
+        margin: 20px 0;
+      }
+      .text-box-1, .text-box-3{
+        font-size: 24px;
+        width: 100%;
+        font-weight: bold;
+        margin-bottom: 15px;
+        margin-left: 12px;
+      }
+      .text-home{
+        font-size: 11px;
+        font-weight: 100;
+        width: 80%;
+      }
+      
+      .box3 img, .box1 img{
+        object-fit:cover;
+        width: auto;
+        height: 115%;
+      }
+      .box3 img{
+      right: -5px;
+      width: 50%;
+      }
+      .box1 img{
+        left: -7px;
+        width: 50%;
+      }
+  }
+  @media (max-width: 1120px) {
+    .content_index{
+        margin-left: 100px;
+        margin-right: 20px;
+      }
+      .wrapper {
+          gap: 75px !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,330px);
+        grid-template-areas: "box2"
+        "box1"
+        "box3";
+      }
+      .wrapper .box2 p{
+        font-size: 25px;
+        color: white;
+      }
+      .wrapper .box2 h3{
+        font-size: 50px;
+      }
+      .box2 .btn{
+        font-size: 12px;
+      }
+      .btn-box, .btn-box-3{
+          width: 150px;
+          height: fit-content;
+          margin: 15px 0;
+        }
+        .ktab-box-1, .ktab-box-3{
+            font-size: 30px;
+            font-weight: 800;
+            margin: 30px 0;
+            width: 60%;
+          }
+          .text-box-1, .text-box-3{
+            font-size: 40px;
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-left: 12px;
+          }
+          .text-home{
+            font-size: 11px;
+            font-weight: 100;
+            width: 80%;
+          }
+          
+          .box3 img, .box1 img{
+            object-fit:cover;
+            width: 100%;
+            height:130%;
+          }
+          .box3 img{
+          right: -33px;
+          width: 45%;
+          }
+          .box1 img{
+            left: -33px;
+            width: 45%;
+          }
+  }
+  @media (max-width: 1100px) {
+    .content_index{
+      margin-left: 100px;
+      margin-right: 20px;
+    }
+    .wrapper {
+        gap: 85px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,310px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 p{
+      font-size: 25px;
+      color: white;
+    }
+    .wrapper .box2 h3{
+      font-size: 50px;
+    }
+    .box2 .btn{
+      font-size: 12px;
+    }
+    .btn-box, .btn-box-3{
+        width: 180px;
+        height: fit-content;
+        margin: 15px 0;
+        font-size: medium;
+        font-weight: bold;
+      }
+      .ktab-box-1, .ktab-box-3{
+          font-size: 30px;
+          font-weight: 800;
+          margin: 30px 0;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 43px;
+          width: 100%;
+          font-weight: bold;
+          margin-bottom: 15px;
+          margin-left: 12px;
+        }
+        .text-home{
+          font-size: 11px;
+          font-weight: 100;
+          width: 80%;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+          width: 100%;
+          height:128%;
+        }
+        .box3 img{
+        right: -33px;
+        width: 48%;
+        }
+        .box1 img{
+          left: -33px;
+          width: 48%;
+        }
+  }
+  @media (max-width: 940px) {
+    .content_index{
+        margin-left: 100px;
+        margin-right: 20px;
+      }
+    .wrapper {
+        gap: 50px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,290px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 p{
+      font-size: 25px;
+      color: white;
+    }
+    .wrapper .box2 h3{
+      font-size: 50px;
+    }
+    .box2 .btn{
+      font-size: 12px;
+    }
+    .btn-box, .btn-box-3{
+        width: 150px;
+        height: fit-content;
+        margin: 15px 0;
+      }
+      .ktab-box-1, .ktab-box-3{
+          font-size: 30px;
+          font-weight: 800;
+          margin: 30px 0;
+          width: 60%;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 30px;
+          width: 100%;
+          font-weight: bold;
+          margin-bottom: 15px;
+          margin-left: 12px;
+        }
+        .text-home{
+          font-size: 11px;
+          font-weight: 100;
+          width: 80%;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+          width: 100%;
+          height:120%;
+        }
+        .box3 img{
+        right: -33px;
+        width: 50%;
+        }
+        .box1 img{
+          left: -33px;
+          width: 50%;
+        }
+  }
+  @media (max-width: 768px) {
+    .content_index{
+      margin-left: 25px;
+      margin-right: 25px;
+      margin-top: 20px;
+    }
+    .wrapper {
+      gap: 20px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,270px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 p{
+      font-size: 20px;
+      color: white;
+    }
+    .wrapper .box2 h3{
+      font-size: 35px;
+    }
+    .box2 .btn{
+      font-size: 7px;
+    }
+    .btn-box, .btn-box-3{
+        width: 150px;
+        height: fit-content;
+        margin: 15px 0;
+      }
+      .ktab-box-1, .ktab-box-3{
+          margin: 25px 0;
+          width: 60%;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 28px;
+          width: 100%;
+          font-weight: 800;
+          margin-bottom: 11px;
+          margin-left: 12px;
+        }
+        .text-home{
+          font-size: 11px;
+          font-weight: 100;
+          width: 80%;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+          width: 100%;
+          height:115%;
+        }
+        .box3 img{
+        right: -33px;
+        width: 50%;
+        }
+        .box1 img{
+          left: -33px;
+          width: 50%;
+        }
+  }
+  @media (max-width: 620px) {
+    .content_index{
+      margin-left: 5px;
+      margin-right: 8px;
+      margin-top: 26px;
+    }
+    .wrapper {
+      gap: 22px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,270px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 p{
+      font-size: 17px;
+      color: white;
+    }
+    .wrapper .box2 h3{
+      font-size: 30px;
+    }
+    .box2 .btn{
+      font-size: 10px;
+    }
+    .btn-box, .btn-box-3{
+        width: 150px;
+        height: fit-content;
+        margin: 13px 0;
+      }
+      .ktab-box-1, .ktab-box-3{
+          margin: 20px 0;
+          width: 52%;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 20px;
+          width: 100%;
+          font-weight: 800;
+          margin-bottom: 11px;
+          margin-left: 12px;
+        }
+        .text-home{
+          font-size: 10px;
+          font-weight: 100;
+          width: 85%;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+          width: 100%;
+          height:115%;
+        }
+        .box3 img{
+        right: 11px;
+        width: 40%;
+        }
+        .box1 img{
+          left: 6px;
+          width: 40%;
+        }
+  }
+  @media (max-width: 540px) {
+    .content_index{
+      margin-left: 1px;
+      margin-right: 2px;
+      margin-top: 26px;
+    }
+    .wrapper {
+      gap: 22px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,270px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 h3{
+      font-size: 20px;
+    }
+    .wrapper .box2 p{
+      font-size: 15px;
+    }
+    .box2 img{
+      width: auto;
+      height: 100%;
+    }
+    .box2 .btn{
+      font-size: 10px;
+    }
+    .btn-box, .btn-box-3{
+        width: 120px;
+        height: fit-content;
+        margin: 13px 0;
+        font-size: small;
+      }
+      .ktab-box-1, .ktab-box-3{
+          margin: 38px 0;
+          width: 52%;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 20px;
+          width: 100%;
+          font-weight: 800;
+          margin-bottom: 7px;
+          margin-left: 20px;
+        }
+        .text-home{
+          font-size: 10px;
+          font-weight: 100;
+          width: 85%;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+          width: 100%;
+          height:115%;
+        }
+        .box3 img{
+        right: 11px;
+        width: 40%;
+        }
+        .box1 img{
+          left: 6px;
+          width: 40%;
+        }
+  }
+  
+  @media (max-width: 460px) {
+    .content_index {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .wrapper {
+      gap: 15px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,270px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 h3{
+      font-size: 20px;
+    }
+    .wrapper .box2 p{
+      font-size: 15px;
+    }
+    .box2 img{
+      width: 90px;
+      height: 100%;
+    }
+    .box2 .btn{
+      font-size: 10px;
+    }
+    .btn-box, .btn-box-3{
+        width: 95px;
+        height: fit-content;
+        margin: 13px 0;
+        font-size: small;
+      }
+      .ktab-box-1, .ktab-box-3{
+          margin:30px 0 10px 0px;
+          width: 42%;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 20px;
+          width: 100%;
+          font-weight: 800;
+          margin-bottom: 0px;
+          margin-left: 20px;
+          padding: 0;
+        }
+        .text-home{
+          font-size: 7px;
+          font-weight: 100;
+          width: 85%;
+          padding: 0;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+          width: 90px;
+          height:115%;
+        }
+        .box3 img{
+        right: 0px;
+        width: 190px;
+        }
+        .box1 img{
+          left: 0px;
+          width: 190px;
+        }
+  }
+  
+  @media (max-width: 400px) {
+    .content_index {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .wrapper {
+      gap: 15px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,260px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 h3{
+      font-size: 16px;
+    }
+    .wrapper .box2 p{
+      font-size: 10px;
+    }
+    .box2 img{
+      width: 80px;
+      height: 90%;
+    }
+    .btn-box, .btn-box-3{
+        width: 90px;
+        height: fit-content;
+        margin: 13px 0;
+        font-size: 10px;
+      }
+      .ktab-box-1, .ktab-box-3{
+          margin:30px 0 10px 0px;
+          width: 42%;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 20px;
+          width: 100%;
+          font-weight: 800;
+          margin-bottom: 0px;
+          margin-left: 20px;
+          padding: 0;
+        }
+        .text-home{
+          font-size: 7px;
+          font-weight: 100;
+          width: 85%;
+          padding: 0;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+          width: 90px;
+          height:115%;
+        }
+        .box3 img{
+        right: 0px;
+        width: 190px;
+        }
+        .box1 img{
+          left: 0px;
+          width: 190px;
+        }
+  }
+  
+  @media (max-width: 365px) {
+    .content_index {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 20px;
+    }
+    .wrapper {
+      gap: 12px !important;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,262px);
+      grid-template-areas: "box2"
+      "box1"
+      "box3";
+    }
+    .wrapper .box2 h3{
+      font-size: 17px;
+    }
+    .wrapper .box2 p{
+      font-size: 10px;
+    }
+    .box2 img{
+      width: 70px;
+      height: 85%;
+    }
+    .btn-box, .btn-box-3{
+        width: 85px;
+        height: fit-content;
+        margin: 13px 0;
+        font-size: 10px;
+      }
+      .ktab-box-1, .ktab-box-3{
+          margin:30px 0 10px 0px;
+          width: 40%;
+        }
+        .text-box-1, .text-box-3{
+          font-size: 18px;
+          width: 100%;
+          font-weight: 800;
+          margin-bottom: 0px;
+          margin-left: 15px;
+          padding: 0;
+        }
+        .text-home{
+          font-size: 7px;
+          font-weight: 100;
+          width: 85%;
+          padding: 0;
+        }
+        .ktab-box-3{
+          left: 0px;
+          top:40%;
+          transform: translateY(-50%);
+          width: 42%;
+        }
+        .ktab-box-1{
+          right: 0px;
+          top:40%;
+          transform: translateY(-50%);
+          width: 44%;
+        }
+        
+        .box3 img, .box1 img{
+          object-fit:cover;
+       
+          height:112%;
+        }
+        .box3 img{
+        right: 0px;
+        width: 65%;
+        }
+        .box1 img{
+          left: -3px;
+          width: 65%;
+        }
+  }

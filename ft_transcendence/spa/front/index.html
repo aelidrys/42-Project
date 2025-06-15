@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pingpong</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/chat.css" />
+    <link rel="stylesheet" href="/static/css/online/style.css" />
+    <link rel="stylesheet" href="/static/css/queue/style.css" />
+    <link rel="stylesheet" href="/static/css/load.css" />
+    <link rel="stylesheet" href="/static/css/turnament/style.css" />
+    <link rel="stylesheet" href="/static/css/t.css" />
+    <link rel="stylesheet" href="/static/css/Home.css" />
+    <link rel="stylesheet" href="/static/css/Profile.css" />
+    <link rel="stylesheet" href="/static/css/Settings.css" />
+    <link rel="stylesheet" href="/static/css/friend.css" />
+    <link rel="stylesheet" href="/static/css/Login.css" />
+    <link rel="stylesheet" href="/static/css/Logout.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jaro:opsz@6..72&family=Shojumaru&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+
+    <!-- spinner loading  -->
+
+    <!-- <div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div> -->
+    <!-- spinner loading  -->
+
+
+
+    <!-- frined profile  -->
+ <div class="height-view">
+    <div class="content_profile freined-profile-user">
+      <div class="position-absolute top-0 end-0 btn-exit">
+        <button type="button" class="btn btn-danger bg-danger">
+          <i class="fa-solid fa-x"></i>
+        </button>
+      </div>
+      <div class="pr-welcome m-2 d-flex justify-content-between">
+        <div class="profile-friends-manage"></div>
+      </div>
+      <div class="profile-container">
+        <div class="avatar">
+          <img src="" alt="Profile Picture" />
+        </div>
+        <h1 class="user-h1"></h1>
+        <div class="xp">5000 XP</div>
+        <div class="separator"></div>
+        <div class="stats">
+          <div class="stat" id="wins">
+            <div class="stat-value win">42</div>
+            <div class="stat-label">Wins</div>
+          </div>
+          <div class="stat" id="draw">
+            <div class="stat-value gf">15</div>
+            <div class="stat-label">GF</div>
+          </div>
+          <div class="stat" id="draw">
+            <div class="stat-value ga">20</div>
+            <div class="stat-label">GA</div>
+          </div>
+          <div class="stat" id="losses">
+            <div class="stat-value los">23</div>
+            <div class="stat-label">Losses</div>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <h1>Match History</h1>
+        <div class="scrool_histori ">
+        </div>
+
+      </div>
+      <div class="separator"></div>
+      <table class="tournament-table t-table-1">
+        <thead>
+          <tr>
+            <th class="">Tournaments</th>
+            <th class="win">Wins</th>
+            <th class="gf">GF</th>
+            <th class="ga">GA</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+<template class="temp-stat-tourn">
+  <tbody>
+    <tr>
+      <td id="trn_nums"></td>
+      <td class="win"> 8</td>
+      <td class="gf">12</td>
+      <td  class="ga">10</td>
+    </tr>
+  </tbody>
+
+</template>
+ 
+<!-- <template class="temp-emoji">
+  <div class="emoji"></div>
+</template> -->
+    <!-- frined profile  -->
+<template class="temp-warn">
+  <div class="tourn-warn-chat">
+    <i class="fa-solid fa-gamepad"></i>
+    <div class="chat-warn-tourn">Attention  Your next game is about to begin. Please be ready.
+    </div>
+  </div>
+</template>
+
+<!-- TOURNMENT  HOLDER  -->
+<div class="parent-container-4" id='trn_hstry'></div>
+<!-- TOURNMENT  HOLDER  -->
+
+
+    <div class="load-page">
+      <div class="ball"></div>
+      <div class="right-bar"></div>
+      <div class="left-bar"></div>
+    </div>
+    <template id="message-success-template">
+      <div class="message-success">
+        <div class="hold-msg-content"></div>
+      </div>
+    </template>
+
+    <template id="message-info-template">
+      <div class="message-info">
+        <div class="hold-msg-content"></div>
+      </div>
+    </template>
+
+    <template id="message-error-template">
+      <div class="message-error">
+        <div class="hold-msg-content"></div>
+      </div>
+    </template>
+
+    <template id="message-request-template">
+      <div class="message-request">
+        <div class="hold-msg-content"></div>
+      </div>
+    </template>
+    <template class="recieve-chat-message-tmp">
+      <div class="wh-container wasla-list">
+        <div class="wasla d-flex align-items-center">
+          <div class="wasla-avatar">
+            <img src="/spa/front/static/images/login.jpeg" alt="Sharmi Fateh" />
+          </div>
+          <div class="wasla-info">
+            <div class="wasla-name">Sharmi Fateh</div>
+            <div class="wasla-status">
+              <p>At school ...</p>
+            </div>
+          </div>
+          <button class="wasla-meta">X</button>
+          <!-- <button class="wasla-accepte">✔️</button> -->
+        </div>
+      </div>
+    </template>
+    <!-- hna -->
+    <template class="recieve-chat-message-game">
+      <div class="wh-container wasla-list">
+        <div class="wasla d-flex align-items-center">
+          <div class="wasla-avatar">
+            <img src="/spa/front/static/images/login.jpeg" alt="Sharmi Fateh" />
+          </div>
+          <div class="wasla-info">
+            <div class="wasla-status">
+              <p>At school ...</p>
+            </div>
+          </div>
+          <button class="wasla-meta wasla-cancel">X</button>
+          <button class="wasla-meta wasla-accepte">✔️</button>
+        </div>
+      </div>
+    </template>
+    <div class="message-holder"></div>
+
+    <div class="page">
+      <div class="sidebar-main"></div>
+      <div class="content w-100 h-100"></div>
+    </div>
+
+    <div class="freez-all"></div>
+    <div class="trn_freez-all"></div>
+    <!-- <button class="dlg-btn"> click here</button> -->
+    <div class="dlg-container">
+      <div class="dlg-message">You want to contunue?</div>
+      <div class="dlg-footer">
+        <button class="dlg-cancel">Cancel</button>
+        <button class="dlg-ok">Ok</button>
+      </div>
+    </div>
+
+    <!-- chat  -->
+    <template class="me-tempmsg">
+      <div class="hold-me-message">
+        <img src="" alt="" />
+        <div class="me-message"></div>
+      </div>
+    </template>
+    <template class="you-tempmsg">
+      <div class="hold-you-message">
+        <div class="you-message"></div>
+        <img src="" alt="" />
+      </div>
+    </template>
+    <template class="select-chat-template">
+      <div class="select-chat">
+        <div class="chat-select-title">
+          <div class="chat-select-avatar">
+            <img src="/images/rem.jpg" alt="" />
+          </div>
+          <div class="select-umsg">
+            <h4>lina</h4>
+            <p>shdfkdfdfdfj</p>
+          </div>
+        </div>
+        <div class="number-messages"></div>
+      </div>
+    </template>
+
+    <template class="avatar-template">
+      <div data-click="1" class="chat-select-avatar contact-click">
+        <img data-click="1" src="/images/rem.jpg" alt="" />
+      </div>
+    </template>
+
+    <!-- <template class="temp-chat-notification">
+      <div class="wh-container wasla-list">
+        <div class="wasla d-flex align-items-center">
+          <div class="wasla-avatar">
+            <img src="/spa/front/static/images/login.jpeg" alt="Sharmi Fateh" />
+          </div>
+          <div class="wasla-info">
+            <div class="wasla-name">Sharmi Fateh</div>
+            <div class="wasla-status">
+              <p>At school ...</p>
+            </div>
+          </div>
+          <button class="wasla-meta">X</button>
+        </div>
+      </div>
+    </template> -->
+    <!-- <template class="temp-chat-notification">
+      <div class="wh-container wasla-list">
+        <div class="wasla d-flex align-items-center">
+          <div class="wasla-avatar">
+            <img src="/spa/front/static/images/login.jpeg" alt="Sharmi Fateh" />
+          </div>
+          <div class="wasla-info">
+            <div class="wasla-name">Sharmi Fateh</div>
+            <div class="wasla-status">
+              <p>At school ...</p>
+            </div>
+          </div>
+          <button class="wasla-meta">X</button>
+        </div>
+      </div>
+    </template> -->
+
+
+
+
+    <template class="all-users-template">
+      <div class="friend rad-6 p-4 position-relative send-request-friend">
+        <div class="contact_frind d-flex align-items-center">
+          <div class="add-manage"></div>
+          <div>
+            <a class="text-light show-profile"
+              ><button type="submit" class="btn btn-primary">Profile</button></a
+            >
+            <!-- data-link  -->
+          </div>
+        </div>
+        <div class="txt-c text-center">
+          <img decoding="async" class="rad-half mt-2 mb-2" src="" alt="" />
+          <h4 class="m-1"></h4>
+        </div>
+      </div>
+    </template>
+
+    
+    <template class="friends-list-template">
+      <div class="dletefriendevent friend rad-6 p-4 position-relative">
+        <div class="contact_frind d-flex align-items-center">
+          <div class="status-frind ${status}" aria-label="Not Active">
+            <div class="${status}_1"></div>
+          </div>
+        </div>
+        <div class="txt-c text-center">
+          <img
+            decoding="async"
+            class="rad-half mt-2 mb-2"
+            src="${this.getProfileById(friend.id).avatar}"
+            alt=""
+          />
+          <h4 class="m-1">${friend.username}</h4>
+        </div>
+        <div class="icons fs-15 p-relative">
+          <div class="friend-count_1 mb-10">
+            <i class="fa-regular fa-face-smile fa-fw"></i>
+            <span class="friend-total">Friend</span>
+          </div>
+        </div>
+        <div
+          class="info d-flex align-items-center justify-content-center fs-13"
+        >
+          <div>
+            <a class="text-center btn show-profile"> PROFILE</a>
+            <!-- data-link  -->
+            <a class="text-center btn btn-danger deletefriend"> Remove</a>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template class="invitations-template">
+      <div class="request">
+        <img src="" alt="Sasuke" />
+        <div class="request-info">
+          <div class="request-name"> </div>
+          <div class="request-time">20 hrs ago</div>
+        </div>
+        <div class="request-actions">
+          <button class="no_accepte deletef">✕</button>
+          <button class="accepte acceptf">✓</button>
+        </div>
+      </div>
+    </template>
+
+    <template class="search-template">
+      <a class="user-ser hide" data-link>
+        <div class="username-ser"></div>
+        <div class="avatar-ser">
+          <img src="avatar1.png" alt="User Avatar" />
+        </div>
+      </a>
+    </template>
+
+    <template class="li-temp">
+      <li class="contact-click">
+        <img src="avatar1.png" alt="" />
+        <div>username</div>
+      </li>
+    </template>
+
+    <template class="user-serch-temp">
+      <a class="user-ser go-profile hide">
+        <div class="username-ser"></div>
+        <div class="avatar-ser">
+          <img src="avatar1.png" alt="User Avatar" />
+        </div>
+      </a>
+    </template>
+    
+<template class="history-template">
+  <div class="histor d-flex justify-content-evenly bd-highlight">
+    <div class="histor d-flex justify-content-evenly bd-highlight">
+        <div class="player_01">
+            <img src="${p1profile.avatar}" alt="Profile Picture">
+            <div class="Usernametohistory"></div>
+        </div>
+        <div class="player_03 d-flex justify-content-around align-items-center flex-column">
+          <div class="score_game_histori d-flex justify-content-between align-items-center">
+           
+          <div class="buut buut-1"></div>
+            <div class="tow_poin">:</div>
+            <div class="buut buut-2"></div>
+            </div>
+          <div class="date_game_histori">
+            ${gamedate || "00-00-00 00:00:00" }
+          </div>
+        </div>
+        <div class="player_02">
+            <img src="${p2profile.avatar}" alt="Profile Picture">
+            <div class="Usernametohistory">${p2profile.user.username}</div>
+        </div>
+    </div>
+</div>
+<div class="separator"></div>
+</template>
+  </body>
+  <script type="module" src="/static/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/static/js/all.min.js"></script>
+  <script type="module" src="/static/js/all.min.js"></script>
+  <script type="module" src="/static/js/index.js"></script>
+</html>

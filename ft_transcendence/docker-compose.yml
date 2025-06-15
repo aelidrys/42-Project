@@ -1,0 +1,244 @@
+#----------------------------- Authentication section -------------------------------
+services:
+  django: 
+    container_name: django
+    build: 
+      context: ./ft_trance_spa/pingpong
+    volumes:
+      - ./ft_trance_spa/pingpong:/user/app  
+    env_file:
+      - .env
+    networks:
+      pingpong.net:
+        ipv4_address: 192.160.1.23
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres
+    image: postgres:12
+    env_file:
+      - .env
+    volumes:
+      - auth_db:/var/lib/postgresql/data
+    networks:
+      - pingpong.net
+
+#----------------------------- Nginx section -------------------------------
+
+  nginx:
+      container_name: nginx
+      build:
+        context: ./nginx
+        dockerfile: Dockerfile
+      restart: unless-stopped
+      command: /bin/sh -c "nginx -g 'daemon off;' && sleep 10 && nginx -s reload"
+      ports:
+        - "8082:443"
+      volumes:
+        - ./spa/front:/var/www/html/
+        - ./ft_trance_spa/pingpong/media:/var/www/html/media
+        - ./nginx/conf.d:/etc/nginx/conf.d/
+      networks:
+        pingpong.net:
+          ipv4_address: 192.160.1.22
+      depends_on:
+        - django
+        - game
+        - matchmaking
+        - tournament
+        - chat
+
+  redis:
+    image: redis:7.2
+    restart: always
+    container_name: redis
+    networks:
+      - pingpong.net
+
+
+
+
+
+#------------------------------ Game section ------------------------------
+  game:
+    build:
+      context: ./game
+      dockerfile: Dockerfile
+    container_name: game
+    restart: always
+    depends_on:
+      - game_db
+    volumes:
+      - game:/app
+      - ./static_files:/static
+    networks:
+      pingpong.net:
+        ipv4_address: 192.160.1.24
+      monabid.42.game: {}
+    env_file:
+      - .env
+
+  game_db:
+    image: postgres:16
+    restart: always
+    container_name: game_db
+    env_file:
+      - .env
+    volumes:
+      - game_db:/var/lib/postgresql/data
+    networks:
+      - monabid.42.game
+
+#----------------------------------- MatchMaking-------------------------------- 
+  matchmaking:
+    build:
+      context: ./match_making
+      dockerfile: Dockerfile
+    container_name: match_making
+    restart: always
+    volumes:
+      - match_making:/app
+    networks:
+      pingpong.net:
+        ipv4_address: 192.160.1.25
+      monabid.42.game: {}
+    env_file:
+      - .env
+ 
+  matchmaking_db:
+    image: postgres:16
+    restart: always
+    container_name: matchmaking_db
+    env_file:
+      - .env
+    volumes:
+      - matchmaking_db:/var/lib/postgresql/data
+    networks:
+      - monabid.42.game
+
+
+#------------------------------- chat section -----------------------------
+  chat: 
+    container_name: chat
+    build:
+      context: ./Chat
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - chat_db
+    volumes:
+      - chat:/user/app
+    networks:
+      pingpong.net:
+        ipv4_address: 192.160.1.27
+      chat_net: {}
+    env_file:
+      - .env
+  
+  chat_db:
+    container_name: chat_db
+    image: postgres:16
+    restart: always
+    volumes:
+      - chat_dbV:/var/lib/postgresql/data
+    networks:
+      - chat_net
+    env_file:
+      - .env
+
+
+
+#------------------------------ Tournemant section ------------------------------
+  tournament:
+    container_name: tournament
+    restart: always
+    depends_on:
+      - tourn_db
+    build:
+      context: ./Tournament/
+      dockerfile: Dockerfile
+    volumes:
+      - tourn_volume:/user/app
+    networks:
+      pingpong.net:
+        ipv4_address: 192.160.1.26
+      tourn.net: {}
+    env_file:
+      - .env
+  tourn_db:
+    container_name: tourn_db
+    image: postgres:latest
+    volumes:
+      - tourn_db_volume:/var/lib/postgresql/data
+    networks:
+      - tourn.net
+    env_file:
+      - .env
+
+#----------------------------- Volumes section -------------------------------
+volumes:
+  game:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: './game/service'
+
+  game_db:
+
+
+  match_making:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: './match_making/service'
+
+  matchmaking_db:
+
+
+  chat:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: 'Chat/chat'
+
+  chat_dbV:
+
+
+  tourn_volume:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: 'Tournament/tournament'
+
+  tourn_db_volume:
+
+
+  auth_db:
+
+
+
+# ------------------ Networks section ---------------
+networks:
+  pingpong.net:
+    name: pingpong.net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.160.1.0/26
+
+  monabid.42.game:
+    name: monabid.42.game
+    driver: bridge
+
+  chat_net:
+    name: chat_net
+    driver: bridge
+
+  tourn.net:
+    name: tourn.net
+    driver: bridge

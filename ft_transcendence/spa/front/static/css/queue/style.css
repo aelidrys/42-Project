@@ -1,0 +1,455 @@
+
+/***********************/
+
+.game-section {
+    margin-left: 120px;
+    width: 90%;
+    height: 70vh;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .game-section h1 {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: "Titan One", sans-serif;
+  }
+
+  .cards-container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .content-game-2 {
+    flex-grow: 1;
+    background-color: var(--color-light-dark);
+    box-shadow: inset 0px 1px 98px 40px rgba(0, 0, 0, 0.9);
+    border: 2px solid #414463;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 670px;
+    height: 310px;
+    gap: 25px;
+    
+  }
+  .tap-tap-game-2-1,  .tap-tap-game-2-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Jaro", system-ui;
+    gap: 20px;
+  }
+  .tap-tap-game-2-1 h2,  .tap-tap-game-2-2 h2{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 10px 0px;
+    font-family: "Titan One", sans-serif;
+  }
+  
+  .tap-tap-game-2-1 p {
+    color: rgb(165, 158, 158);
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+  }
+  .tap-tap-game-2-2 p{
+    color: rgb(165, 158, 158);
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+  }
+  
+  .play-bot-2{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-light-dark);
+    color: white;
+    font-weight: bold;
+    border: 1px solid #414463;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    transition: background 0.3s ease;
+  } 
+  .play-btn-2{
+    background-color: var(--color-light-dark);
+    height: 55px;
+    width: 150px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #414463;
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+
+  .play-btn-2:hover,  .play-bot-2:hover {
+    background-color: var(--color-light-dark);
+    box-shadow: 0px 0 10px 10px var(--color-light-dark);
+  }
+  .online-games, .local-games {
+    padding: 15px;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-bottom: 55px;
+    }
+    .online-games{
+      transform: rotateZ(33deg);
+    }
+    .local-games{
+      transform: rotateZ(-15deg);
+    }
+
+@media screen and (max-width: 1200px) {
+  .game-section {
+    margin-left: 150px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    /* padding: 20px; */
+  }
+  
+  .cards-container-2 {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .content-game-2 {
+    width: 85%;
+    max-width: 640px;
+    height: 290px;
+  }
+  
+  .online-games, .local-games {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .game-section {
+    /* margin-left: 50px; */
+    margin-top: 100px;
+    width: 80%;
+    height: auto;
+  }
+  .cards-container-2 {
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .content-game-2 {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .tap-tap-game-2-1, .tap-tap-game-2-2 {
+    gap: 20px;
+  }
+  
+  .tap-tap-game-2-1 h2, .tap-tap-game-2-2 h2 {
+    font-size: 20px;
+  }
+  
+  .online-games, .local-games {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 35px;
+  }
+  
+  .play-bot-2 {
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .play-btn-2 {
+    width: 110px;
+    height: 50px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .game-section {
+    margin-left: 30px;
+    width: 90%;
+    gap: 40px;
+  }
+  
+  .game-section h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .content-game-2 {
+    width: 95%;
+    gap: 25px;
+    max-width: 550px;
+  }
+  .tap-tap-game-2-1,  .tap-tap-game-2-2{
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+  }
+  .tap-tap-game-2-1 h2, .tap-tap-game-2-2 h2 {
+    font-size: 18px;
+  }
+  
+  .tap-tap-game-2-1 p, .tap-tap-game-2-2 p {
+    font-size: 12px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  .online-games, .local-games {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 25px;
+  }
+  
+  .play-bot-2 {
+    width: 120px;
+    height: 45px;
+    /* padding: 6px 20px; */
+  }
+  
+  .play-btn-2 {
+    width: 100px;
+    height: 45px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .game-section {
+    margin-left: 18px;
+    gap: 40px;
+  }
+  
+  .game-section h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .content-game-2 {
+    width: 100%;
+    gap: 5px;
+  }
+  
+  .tap-tap-game-2-1 h2, .tap-tap-game-2-2 h2 {
+    font-size: 16px;
+  }
+  
+  .tap-tap-game-2-1 p, .tap-tap-game-2-2 p {
+    font-size: 10px;
+    line-height: 1.1;
+  }
+  
+  .online-games, .local-games {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .play-btn-2 {
+    width: 90px;
+    height: 40px;
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+  
+  .online-games {
+    transform: rotateZ(25deg);
+  }
+  
+  .local-games {
+    transform: rotateZ(-10deg);
+  }
+}
+@media screen and (max-width: 350px) {
+  .game-section {
+    margin-left: 15px;
+    gap :40px
+  }
+  
+  .online-games, .local-games {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+}
+/* Add this to ensure smooth transitions */
+/* .game-section,
+.content-game-2,
+.online-games,
+.local-games,
+.play-bot-2,
+.play-btn-2 {
+  transition: all 0.3s ease;
+} */
+/**********************/
+/* 
+
+.mainqueueBox
+{
+  height: 70vh;
+  background: linear-gradient(to right, white, rgb(255, 217, 0), white);
+  background-clip: text;
+  color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+.queueBox{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+.queueBox h1{
+  font-family: "Shojumaru", system-ui;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.queuetitle{
+  height: 20%;
+  font-family: "Shojumaru", system-ui;
+  font-weight: bold;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.button-card {
+    display: inline-block;
+    width: 90%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: #ffc400;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-size: 50px;
+  }
+
+  .button-card:hover {
+    background-color: #f011e5;
+    color: aliceblue;
+  }
+  @media  (max-width: 900px) {
+  .mainqueueBox{
+    margin-top: 10%;
+  }
+  .queueBox{
+      height: 60%;
+      width: 80%;
+  }
+  .queueBox h1{
+    font-weight: 700;
+    font-style: normal;
+  }
+  .queuetitle{
+    height: 20%;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .button-card {
+    width: 90%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 16px;
+    margin: 10px;
+    font-style: normal;
+    font-size: 50px;
+  }
+}
+@media (max-width: 540px){
+  .queueBox h1{
+    font-weight: 500;
+  }
+  .queuetitle{
+    height: 10%;
+    font-weight: 100;
+  }
+  .button-card {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 15px;
+    margin: 10px;
+    font-style: normal;
+    font-size: 40px;
+  }
+}
+@media (max-width: 400px){
+  .queueBox h1{
+    font-weight: 500;
+    font-size: unset;
+  }
+  .queuetitle{
+    height: 10%;
+    font-weight: 100;
+    font-size: unset;
+
+  }
+  .button-card {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 15px;
+    margin: 10px;
+    font-style: normal;
+    font-size: unset;
+
+  }
+} */

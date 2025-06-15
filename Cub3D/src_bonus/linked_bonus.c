@@ -22,7 +22,7 @@ t_img	*new_img(t_info *cub, char *str, char c)
 	img->ptr = mlx_xpm_file_to_image(cub->mlx->ptr, str,
 			&img->width, &img->heigth);
 	if (!img->ptr)
-		ft_error("xpm file not valid");
+		ft_error("xpm file not valid", str);
 	img->dir = c;
 	img->addr = mlx_get_data_addr(img->ptr,
 			&img->bits_per_pixel, &img->line_length, &img->endian);

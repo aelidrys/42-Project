@@ -12,11 +12,13 @@
 
 #include "../cub3d.h"
 
-void	ft_error(char *str)
+void	ft_error(char *str1, char str2)
 {
 	write(2, "ERROR\n", 7);
-	while (str && *str)
-		write(2, str++, 1);
+	while (str1 && *str1)
+		write(2, str1++, 1);
+	while (str2 && *str2)
+		write(2, str2++, 1);
 	write(2, "\n", 1);
 	exit(1);
 }

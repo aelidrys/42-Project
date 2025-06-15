@@ -165,7 +165,7 @@ void	get_xpm_file(t_info *cub);
 int		draw_wapeans(t_info *cub);
 
 // aelidrys
-void	ft_error(char *str);
+void	ft_error(char *str1, char str2) 
 void	motion(t_info *cub);
 int		open_door(t_info *cub);
 char	**get_element(char *str);

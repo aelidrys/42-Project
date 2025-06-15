@@ -1,0 +1,498 @@
+.content_profile  {
+    margin-left: 150px;
+    margin-right: 40px;
+    padding: 20px;
+    flex-grow: 1;
+    color: #fff;
+    font-family: 'Jaro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+    max-width: 700px;
+    margin: auto;
+} 
+
+.pr-welcome p{
+font-family: "Jaro", system-ui;
+font-weight: bold;
+font-size: 40px;
+filter: drop-shadow(0px 0px 10px var(--red-color));
+animation: raj3o2 1s;
+}
+
+.pr-welcome  .btn-settings svg  {
+font-size: 30px;
+color: #972EFD;
+}
+
+@keyframes rotate {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+.profile-container {
+background-color: #25284A;
+color: #fff;
+border-radius: 20px;
+padding: 40px;
+box-shadow: inset 0px -109px 98px 43px rgba(0,0,0,0.9),
+inset 0px 109px 98px 43px rgba(0,0,0,0.9);
+text-align: center;
+position: relative;
+overflow: hidden;
+z-index: 1;
+border: solid 2px #31365D;
+width: 100%;
+}
+
+.profile-container::before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: conic-gradient(
+    from 0deg,
+    transparent 0deg 80deg,
+    #202443 80deg 140deg,
+    transparent 140deg 360deg
+);
+animation: rotate 8s linear infinite;
+opacity: 0.8;
+z-index: -1;
+}
+
+.avatar {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+border:solid 3px var(--red-color);
+box-shadow: 0 0 20px var(--red-color);
+margin: 0 auto 20px;
+position: relative;
+overflow: hidden;
+}
+
+.avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+
+.avatar:hover img {
+transform: scale(1.1);
+}
+
+.xp {
+font-size: 2.5em;
+color: gold;
+margin-bottom: 31px;
+}
+
+.stats {
+display: flex;
+justify-content: space-around;
+margin-top: 30px;
+}
+
+.stat {
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.stat:hover {
+transform: scale(1.1);
+}
+
+.stat-value {
+font-size: 3em;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.scrool_histori{
+scroll-snap-type: y mandatory;
+background-color: #202443;
+border-radius: 40px;
+width: 100%;
+height: 140px;
+overflow: auto;
+position: relative;
+}
+.no-game, .no-history{
+background: linear-gradient(to right, white, #0da9e9, white);
+background-clip: text;
+color: transparent;
+position: absolute;
+text-align: center;
+top: 35%;
+left: 33%;
+right: 33%;
+font-size: xx-large;
+}
+.histor{
+width: 100%;
+gap: 1%;
+scroll-snap-align: start;
+}
+.histor .player_01 img{
+width: 100px;
+height: 100px;
+border-radius: 50%;
+margin: 5px;
+border:solid 3px var(--red-color);
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+.histor .player_02 img{
+width: 100px;
+height: 100px;
+border-radius: 50%;
+margin: 5px;
+border:solid 3px var(--red-color);
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+.histor .player_01:hover img, .histor .player_02:hover img {
+transform: scale(1.1);
+box-shadow: 0 0 20px var(--red-color);
+}
+
+.histor .Usernametohistory{
+font-size: 20px;
+font-weight: bold;
+}
+.histor .buut{
+font-size: 3em;
+font-weight: 900;
+margin: 0px 50px;
+}
+.histor .tow_poin{
+font-size: 3.5em;
+font-weight: bold;
+border-radius: 50%;
+}
+
+.win{
+color: rgb(6, 245, 6);
+}
+.los{
+color: rgb(243, 26, 26);
+}
+.gf{
+color: rgb(81, 188, 238);
+}
+.ga{
+color: rgb(247, 228, 56);
+}
+.stat-label {
+text-transform: uppercase;
+letter-spacing: 0.5px;
+font-size: x-large;
+font-weight: bold;
+}
+
+.separator {
+height: 2px;
+background: linear-gradient(to right, transparent, #0da9e9, transparent);
+margin: 30px 0;
+position: relative;
+overflow: hidden;
+}
+
+.separator::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(to right, transparent, #fff, transparent);
+animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+100% { left: 100%; }
+}
+
+.tournament-table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 2px 7px;
+}
+
+.tournament-table th,
+.tournament-table td {
+padding: 15px;
+text-align: center;
+background: #202443;
+position: relative;
+overflow: hidden;
+}
+
+.tournament-table th {
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 1px;
+background: rgba(191, 3, 248, 0.377);
+}
+
+.tournament-table td::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+transition: 0.5s;
+}
+
+.tournament-table tr:hover td::before {
+left: 100%;
+}
+@media (max-width:946px) {
+
+.no-game, .no-history{
+    font-size: x-large;
+}
+}
+@media (max-width:900px) {
+.content_profile  {
+    margin-left: 110px;
+    margin-right: 10px;
+    padding: 15px;
+    flex-grow: 0.5;
+}
+
+.pr-welcome p{
+    font-size: 35px;
+    }
+
+.pr-welcome  .btn-settings svg  {
+    font-size: 30px;
+}
+
+    .profile-container {
+    padding: 8px;
+    width: 100%;
+}  
+.avatar {
+    border:solid 3px var(--red-color);
+    box-shadow: 0 0 20px var(--red-color);
+    margin: 0 auto 20px;
+}
+
+.xp {
+    font-size: 1.5em;
+    margin-bottom: 31px;
+}
+
+.stats {
+    margin-top: 20px;
+}
+
+.stat-value {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.scrool_histori{
+    width: 100%;
+    height: 115px;
+    overflow: auto;
+}
+.histor{
+    width: 100%;
+    gap: 1%;
+}
+.histor .player_01 img{
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    border:solid 2px var(--red-color);
+}
+.histor .player_02 img{
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    border:solid 2px var(--red-color);
+}
+.histor .player_01:hover img, .histor .player_02:hover img {
+    transform: scale(1);
+    box-shadow: 0 0 20px var(--red-color);
+}
+
+.histor .Usernametohistory{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.histor .buut{
+    font-size: 2em;
+    margin: 0px 45px;
+}
+
+.histor .tow_poin{
+    font-size: 2.5em;
+}
+
+.tournament-table {
+    width: 100%;
+    border-spacing: 2px 5px;
+}
+
+.tournament-table th,
+.tournament-table td {
+    padding: 12px;
+}
+
+.tournament-table th {
+    letter-spacing: 0.5px;
+}
+
+}
+
+@media (max-width: 880px) {
+.content_profile  {
+    margin-top: 10px;
+    padding: 10px;
+    flex-grow: 0.2;
+} 
+}
+
+@media (max-width: 768px) {
+.content_profile  {
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding: 10px;
+}
+}
+
+@media (max-width: 710px) {
+.content_profile  {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+    padding: 5px;
+}
+.pr-welcome p{
+    font-size: 25px;
+    }
+
+.pr-welcome  .btn-settings svg  {
+    font-size: 20px;
+}
+.no-game, .no-history{
+    font-size: large;
+}
+}
+
+@media (max-width:540px) {
+.content_profile  {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+    padding: 5px;
+}
+
+.pr-welcome p{
+    font-size: 25px;
+    }
+
+.pr-welcome  .btn-settings svg  {
+    font-size: 20px;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border:solid 2.5px var(--red-color);
+    box-shadow: 0 0 20px var(--red-color);
+    margin: 0 auto 20px;
+}
+.profile-container::before {
+    display: none;
+}
+.xp {
+    font-size: 1em;
+}
+
+.stats {
+    margin-top: 5px;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.stat-label{
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.scrool_histori{
+    width: 100%;
+    height: 90px;
+    overflow: auto;
+}
+.no-game, .no-history{
+    font-size:medium;
+}
+.histor{
+    width: 100%;
+    gap: 1%;
+}
+.histor .player_01 img, 
+.histor .player_02 img{
+    width: 50px;
+    height: 50px;
+    margin: 7px;
+    border:solid 1.5px var(--red-color);
+}
+.histor .player_01:hover img, .histor .player_02:hover img {
+    box-shadow: 0 0 10px var(--red-color);
+}
+
+.histor .Usernametohistory{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.histor .buut{
+    font-size: 1.2em;
+    margin: 0px 5px;
+}
+
+.score_game_histori{
+    height: 60%;
+}
+
+.histor .tow_poin{
+    font-size: 1.2em;
+}
+
+.tournament-table {
+    width: 100%;
+    border-spacing: 1px 2.5px;
+}
+
+.tournament-table th,
+.tournament-table td {
+    padding: 8px;
+}
+
+.tournament-table th {
+    letter-spacing: -1.5px;
+}
+}
+@media (max-width:440px) {
+.no-game, .no-history{
+    font-size: x-small;
+    top: 44%;
+}
+}

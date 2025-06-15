@@ -1,0 +1,330 @@
+/***************************/
+
+.tournament-section {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 1110px;
+  min-width: 300px;
+
+}
+
+.cards-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.content-tour-1 {
+  flex-grow: 1;
+  background-color: var(--color-light-dark);
+  box-shadow: inset 0px 1px 98px 40px rgba(0, 0, 0, 0.9);
+  border: 2px solid #414463;
+  border-radius: 15px;
+  width: 100%;
+  height: 310px;
+}
+.tap-tap{
+  flex-direction: column;
+  gap: 25px;
+  margin-right: 15px;
+}
+.tap-tap h2 {
+  font-family: "Titan One", sans-serif;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 30px 0px;
+}
+
+.tap-tap p {
+  font-family: "Jaro", system-ui;
+  color: rgb(165, 158, 158);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  text-transform: uppercase;
+}
+
+.join-btn {
+  background-color: var(--color-light-dark);
+  height: 55px;
+  width: 190px;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #414463;
+  padding: 8px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: var(--color-light-dark);
+  box-shadow: 0px 0 10px 10px var(--color-light-dark);
+}
+
+.online-trophy, .local-trophy {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.online-trophy{
+  transform: rotateZ(33deg);
+}
+.local-trophy{
+  margin-bottom: 100px;
+  width: 250px;
+  height: 200px;
+  transform: rotateZ(-27deg);
+}
+
+@media (max-width:1400px) {
+
+.tournament-section {
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.cards-container {
+  margin-top: 0px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.content-tour-1 {
+  flex-grow: 1;
+  border: 2px solid #414463;
+  border-radius: 15px;
+  width: 100%;
+  height: 310px;
+}
+.tap-tap{
+  gap:22px;
+  margin-right: 15px;
+}
+.tap-tap h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 30px 0px;
+}
+
+.tap-tap p {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+}
+
+.join-btn {
+  height: 55px;
+  width: 190px;
+  font-weight: bold;
+  border: 1px solid #414463;
+  padding: 8px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.online-trophy, .local-trophy {
+  width: 200px;
+  height: 200px;
+}
+
+.local-trophy{
+  margin-bottom: 100px;
+  width: 250px;
+  height: 200px;
+}
+  
+}
+
+
+@media (max-width:940px) {
+
+  .tournament-section {
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+  }
+  
+  .cards-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .content-tour-1 {
+    flex-grow: 1;
+    border: 2px solid #414463;
+    border-radius: 15px;
+    width: 100%;
+    height: 310px;
+  }
+  .tap-tap{
+    gap: 20px;
+    margin-right: 10px;
+  }
+  .tap-tap h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 10px 0px;
+  }
+  
+  .tap-tap p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+  }
+  
+  .join-btn {
+    height: 55px;
+    width: 190px;
+    font-weight: bold;
+    border: 1px solid #414463;
+    padding: 8px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .online-trophy, .local-trophy {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .local-trophy{
+    margin-bottom: 100px;
+    width: 250px;
+    height: 200px;
+  }
+    
+  }
+
+@media (max-width:640px) {
+
+  .tournament-section {
+    margin: 0 auto;
+    padding: 5px;
+    width: 90%;
+    min-width: 300px;
+  }
+  
+  .cards-container {
+    margin-top: 0px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .content-tour-1 {
+    flex-grow: 1;
+    border: 1px solid #414463;
+    border-radius: 15px;
+    width: 100%;
+    height: 310px;
+  }
+  .tap-tap{
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+    margin-right: 5px;
+    gap: 15px;
+  }
+  .tap-tap h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 35px 0px;
+  }
+  
+  .tap-tap p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+  }
+  
+  .join-btn {
+    height: 50px;
+    width: 140px;
+    font-weight: bold;
+    border: 1px solid #414463;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .online-trophy, .local-trophy {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .local-trophy{
+    margin-bottom: 100px;
+  }
+    
+  }
+  @media (max-width:430px) {
+
+    .tournament-section {
+      margin: 0 auto;
+      padding: 5px;
+      width: 90%;
+      min-width: 300px;
+    }
+    
+    .cards-container {
+      margin-top: 0px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .content-tour-1 {
+      flex-grow: 1;
+      border: 1px solid #414463;
+      border-radius: 15px;
+      width: 100%;
+      height: 320px;
+    }
+    .tap-tap{
+      gap: 10px;
+      margin-right: 5px;
+    }
+    .tap-tap h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 0 30px 0px;
+    }
+    
+    .tap-tap p {
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 700;
+      margin: 0 0 25px 0;
+    }
+    
+    .join-btn {
+      height: 50px;
+      width: 120px;
+      font-weight: bold;
+      border: 1px solid #414463;
+      padding: 10px 25px;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+    
+    .online-trophy, .local-trophy {
+      width: 130px;
+      height: 150px;
+    }
+    
+    .local-trophy{
+      margin-bottom: 100px;
+    }
+      
+    }

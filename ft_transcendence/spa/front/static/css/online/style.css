@@ -1,0 +1,368 @@
+
+
+#gameview{
+    --game-p1-color : #763CAC;
+    --game-p2-color : #00C9A9;
+    --game-bg-color : #190634;
+    --game-border-color: rgba(241, 241, 241, 0.158);
+    --game-ball-color: rgb(180, 177, 176);
+    
+    /* height: 20%; */
+    /* max-height: 80vh; */
+    max-width: calc(80vh * 1.25);
+    width: 80%;
+    aspect-ratio: 1.25 / 1;
+    
+    border: solid 0.1rem var(--game-border-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#gamecard
+{
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20001;
+}
+
+#gameHolder{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#scorePannel
+{
+    height: 10.714285714%;
+    width: 100%;
+    background-color: var(--game-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    position: relative;
+
+}
+
+#Playerscore1
+{
+    height: 100%;
+    width: 45%;
+    background-color: var(--game-p1-color);
+    border: solid 0.1rem var(--game-border-color);
+    clip-path: polygon(0% 0%,
+    80% 0%,
+    100% 100%,
+    0 100%);
+
+}
+
+.pname{
+    transform: translate(0%, 0%);
+    max-width: 8ch;  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    height: 100%;
+    
+}
+
+.containerScore1
+{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    font-size: 2vw;
+    margin-left: 5%;
+    padding-left: 5%;
+    
+
+    font-family: "Titan One", sans-serif;
+    font-weight: bold;
+/* 
+    letter-spacing: 8px; */
+}
+
+#Playerscore2
+{
+    height: 100%; 
+    width: 45%;
+    background-color: var(--game-p2-color);
+    clip-path: polygon(20% 0%,
+    100% 0%,
+    100% 100%,
+    0 100%);
+    font-size: 2vw;
+    display: flex;
+    align-items :end;
+    justify-content: end;
+    
+}
+
+.containerScore2
+{
+    height: 100%;
+    width: 70%;
+
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    
+    margin-right: 5%;
+    padding-right: 5%;
+
+    font-family: "Titan One", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    /* letter-spacing: 8px; */
+}
+
+#rounddiplayer{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 50%;
+    color: white;
+    font-family: "Titan One", sans-serif;
+    font-weight: bold;
+    /* letter-spacing: 8px; */
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    gap: 0px; 
+}
+#rounddiplayer h2
+{
+    font-size: 2vw;
+    margin: 0;
+}
+
+#rounddiplayer h1
+{
+    font-size: 2vw;
+    margin: 0;
+
+}
+
+#overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.corner{
+    height: 70%;
+    aspect-ratio: 1.5 / 1;
+}
+
+.half
+{
+    height: 100%;
+    width: 50%;
+}
+
+.half1
+{
+   display: flex;
+   align-content: start;
+   justify-content: start;
+}
+
+
+.corner1{
+
+    background-color: var(--game-p1-color);
+    clip-path: polygon(0% 0%,
+                        105% 0%,
+                        0% 103%,
+                        0% 100%
+                        );
+    border-radius: 3%;
+    margin: 2% 3%;
+}
+
+.half2
+{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.corner2{
+    background-color: var(--game-p2-color);
+    clip-path: polygon(96% 0%,
+                        100% 0%,
+                        100% 100%,
+                        -6% 100%
+                        );
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    border-radius: 3%;
+    margin: 2%;
+
+    /* filter: drop-shadow(0 0 0.75rem  var(--game-p2-color)); */
+}
+
+
+
+.Pimg
+{
+    height: 40%;
+    /* width: 40%; */
+    aspect-ratio: 1 / 1;
+    background-color: azure;
+    border-radius: 50%;
+    border: solid 2px var(--game-bg-color);
+    /* filter: grayscale(); */
+ 
+}
+
+.pimg1
+{
+    margin-top: 10%;
+    margin-left: 10%;
+
+}
+
+.pimg2
+{
+    margin-bottom: 10%;
+    margin-right: 10%;
+}
+
+.counet{
+    position: absolute;
+    /* text-align: center ; */
+    /* height: 30%;
+    width: 30%; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-family: "Titan One", sans-serif;
+    font-weight: bold;
+    /* letter-spacing: 8px; */
+
+    font-size: 20vh;
+    text-align: center;
+    gap :0px;
+    margin: 0;
+    padding: 0;
+
+    z-index: 5;
+    color: white;
+}
+#board
+{
+    height: calc(100% - 10.714285714%);
+    width: 100%;
+    border: solid 0.1rem var(--game-border-color);
+    background-color: var(--game-bg-color);
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    position: relative;
+}
+
+.player{
+    position: absolute;
+    width : 1%;
+    height: 10%;
+    
+}
+
+
+#playerLeft{
+
+    background-color: var(--game-p1-color);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#controlls1
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 20%;
+    width: 30%;
+    top: 50%;
+    left: 25%;
+
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
+}
+
+#controlls1 p {
+    text-align: center; 
+    color: rgba(128, 128, 128, 0.7);
+}
+
+#controlls2
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 20%;
+    width: 30%;
+    top: 50%;
+    left: 75%;
+
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
+}
+
+#controlls2 p {
+    text-align: center; 
+    color: rgba(128, 128, 128, 0.7);
+}
+
+
+#midleline
+{
+    height: 100%;
+    width: 0.2%;
+    background-color: var(--game-border-color);
+    
+}
+
+#playerRigth {
+    
+    background-color : var(--game-p2-color);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+}
+
+#ball
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width : 2%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50% 50% 50% 50%;
+    background-color: var(--game-ball-color);
+    z-index: 3;
+
+}

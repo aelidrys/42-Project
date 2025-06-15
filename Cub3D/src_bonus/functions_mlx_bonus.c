@@ -20,6 +20,8 @@ void	my_mlx_pixel_put(t_img*data, int x, int y, int color)
 		return ;
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
+	printf("color>>24 = %d",color>>24)
+
 }
 
 void	put_pix_mini(t_img*img, float x, float y, int color)
