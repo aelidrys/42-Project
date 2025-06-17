@@ -1,9 +1,11 @@
-OBJ = a_so_long.o a_touls.o a_split.o a_check_map1.o a_get_next_line.o\
-a_get_next_line_utils.o a_check_map2.o a_imge_to_win.o a_imge_touls.o
+OBJ = soLong/main.o soLong/touls.o soLong/split.o soLong/check_map1.o soLong/get_next_line.o\
+soLong/get_next_line_utils.o soLong/check_map2.o soLong/imge_to_win.o soLong/imge_touls.o
 
-BONUS_OBJ = b_so_long_bonus.o b_touls_bonus.o b_split_bonus.o b_check_map1_bonus.o\
-b_get_next_line_bonus.o b_get_next_line_utils_bonus.o b_check_map2_bonus.o b_imge_to_win_bonus.o\
-b_animation1_bonus.o b_imge_touls_bonus.o b_animation2_bonus.o
+BONUS_OBJ = soLongBonus/main.o soLongBonus/touls.o soLongBonus/split.o soLongBonus/check_map1.o\
+soLongBonus/get_next_line.o soLongBonus/get_next_line_utils.o soLongBonus/check_map2.o soLongBonus/imge_to_win.o\
+soLongBonus/animation1.o soLongBonus/imge_touls.o soLongBonus/animation2.o
+
+CC = gcc
 
 NAME = so_long
 
@@ -11,17 +13,25 @@ NAME_BONUS = so_long_bonus
 
 CFLAGS = -Wall -Wextra -Werror
 
-MLX_FLAGS = -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
+MLX_MFLAGS = -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
+
+MLX_UFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+
+# FLAG = -fsanitize=address -g
 
 all : $(NAME)
 
+%.o: %.c
+	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
+
+
 $(NAME) : $(OBJ)
-	$(CC) $(MLX_FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) $(MLX_UFLAGS) -o $(NAME)
 
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(BONUS_OBJ)
-	$(CC) $(MLX_FLAGS) $(BONUS_OBJ) -o $(NAME_BONUS)
+	$(CC) $(FLAG) $(BONUS_OBJ) $(MLX_UFLAGS) -o $(NAME_BONUS)
 
 clean :
 	rm -f $(OBJ) $(BONUS_OBJ)
