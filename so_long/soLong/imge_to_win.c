@@ -54,15 +54,15 @@ void	sw1_img(t_gam *gam, int k, int c)
 {
 	gam->map[gam->p.y][gam->p.x] = '0';
 	if (k == 'L')
-		put_img(gam, (gam->p.x--) * 70, gam->p.y * 70, '0');
+		put_img(gam, (gam->p.x--) * 50, gam->p.y * 50, '0');
 	if (k == 'R')
-		put_img(gam, (gam->p.x++) * 70, gam->p.y * 70, '0');
+		put_img(gam, (gam->p.x++) * 50, gam->p.y * 50, '0');
 	if (k == 'D')
-		put_img(gam, gam->p.x * 70, (gam->p.y++) * 70, '0');
+		put_img(gam, gam->p.x * 50, (gam->p.y++) * 50, '0');
 	if (k == 'U')
-		put_img(gam, gam->p.x * 70, (gam->p.y--) * 70, '0');
+		put_img(gam, gam->p.x * 50, (gam->p.y--) * 50, '0');
 	gam->map[gam->p.y][gam->p.x] = c;
-	put_p(gam, gam->p.x * 70, gam->p.y * 70, k);
+	put_p(gam, gam->p.x * 50, gam->p.y * 50, k);
 }
 
 void	plyr_movs(t_gam *gam, int x, int y, int s)
@@ -100,7 +100,7 @@ static int player_can_move(t_gam *gam, int x, int y)
 	// {
 	// 	gam->n_c++;
 	// 	gam->map[y][x] = '0';
-	// 	put_img(gam, x * 70, y * 70, '0');
+	// 	put_img(gam, x * 50, y * 50, '0');
 	// }
 	return (1);
 }
@@ -124,7 +124,7 @@ int	a_event(int k, t_gam *gam)
 		&& a_sersh(gam->map, 'E', &gam->m_y, &gam->m_x))
 	{
 		gam->map[gam->m_y][gam->m_x] = 'e';
-		put_img(gam, gam->m_x * 70, gam->m_y * 70, 'e');
+		put_img(gam, gam->m_x * 50, gam->m_y * 50, 'e');
 	}
 	return (0);
 }

@@ -19,14 +19,14 @@ void	anim_of_sheep(t_gam *gam, int x, int y)
 		x = 0;
 		while (gam->map[y][x])
 		{
-			if (gam->n == 12001)
+			if (gam->n == 40001)
 				gam->n = 0;
 			if (gam->map[y][x] == 'C')
 			{
 				if (gam->n == 0)
-					put_img(gam, x * 70, y * 70, 'C');
-				if (gam->n == 8000)
-					put_img(gam, x * 70, y * 70, 'c');
+					put_img(gam, x * 50, y * 50, 'C');
+				if (gam->n == 24000)
+					put_img(gam, x * 50, y * 50, 'c');
 			}
 			x++;
 		}
@@ -64,17 +64,17 @@ void	enemy_movs(t_gam *gam, int x, int y, int c)
 
 void	anim_of_enemy(t_gam *gam, int x, int y, int n)
 {
-	if (n == 0 || n == 2000 || n == 4000 || n == 6000 || n == 8000)
+	if (n == 0 || n == 8000 || n == 16000 || n == 24000 || n == 32000)
 		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.n, x, y);
 	if (n == 0)
 		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a1, x, y);
-	if (n == 2000)
-		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a2, x, y);
-	if (n == 4000)
-		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a3, x, y);
-	if (n == 6000)
-		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a4, x, y);
 	if (n == 8000)
+		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a2, x, y);
+	if (n == 16000)
+		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a3, x, y);
+	if (n == 24000)
+		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a4, x, y);
+	if (n == 32000)
 		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a5, x, y);
 }
 
@@ -84,13 +84,13 @@ int	a_animation(t_gam *gam)
 
 	tmp = gam->a;
 	anim_of_sheep(gam, 0, 0);
-	if (gam->n_c++ == 12002)
+	if (gam->n_c++ == 40002)
 		gam->n_c = 0;
 	while (gam->a)
 	{	
 		gam->a->d = (rand() % 12);
-		anim_of_enemy(gam, gam->a->x * 70, gam->a->y * 70, gam->n_c);
-		if (gam->n_c == 12000)
+		anim_of_enemy(gam, gam->a->x * 50, gam->a->y * 50, gam->n_c);
+		if (gam->n_c == 40000)
 			enemy_movs(gam, gam->a->x, gam->a->y, gam->a->d);
 		gam->a = gam->a->next;
 	}

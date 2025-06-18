@@ -24,9 +24,9 @@ void	std_gam(t_gam *gam)
 		while (gam->map[y][x])
 		{
 			if (gam->map[y][x] != 'P')
-				put_img(gam, x * 70, y * 70, gam->map[y][x]);
+				put_img(gam, x * 50, y * 50, gam->map[y][x]);
 			if (gam->map[y][x] == 'P')
-				put_p(gam, x * 70, y * 70, 'N');
+				put_p(gam, x * 50, y * 50, 'N');
 			x++;
 		}
 		y++;
@@ -70,8 +70,8 @@ int	main(int a, char **av)
 	read_map(&gam, av[1], a);
 	gam.mlx = mlx_init();
 	a_xpm_to_imge(&gam, 0, 0);
-	gam.win = mlx_new_window(gam.mlx, a_lent(gam.map[0]) * 70,
-	arg_lent(gam.map) * 70, "WOLF & SHEEP");
+	gam.win = mlx_new_window(gam.mlx, a_lent(gam.map[0]) * 50,
+	arg_lent(gam.map) * 50, "WOLF & SHEEP");
 	std_gam(&gam);
 	gam.n_sheps = a_sersh_n(gam.map, 'C');
 	mlx_hook(gam.win, 2, (1L<<0), a_event, &gam);
