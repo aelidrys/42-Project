@@ -1,15 +1,11 @@
-OBJ = soLong/main.o soLong/touls.o soLong/split.o soLong/check_map1.o soLong/get_next_line.o\
-soLong/get_next_line_utils.o soLong/check_map2.o soLong/imge_to_win.o soLong/imge_touls.o
-
-BONUS_OBJ = soLongBonus/main.o soLongBonus/touls.o soLongBonus/split.o soLongBonus/check_map1.o\
+OBJ = soLongBonus/main.o soLongBonus/touls.o soLongBonus/split.o soLongBonus/check_map1.o\
 soLongBonus/get_next_line.o soLongBonus/get_next_line_utils.o soLongBonus/check_map2.o soLongBonus/imge_to_win.o\
 soLongBonus/animation1.o soLongBonus/imge_touls.o soLongBonus/animation2.o
+
 
 CC = gcc
 
 NAME = so_long
-
-NAME_BONUS = so_long_bonus
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -28,10 +24,6 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) $(MLX_UFLAGS) -o $(NAME)
 
-bonus : $(NAME_BONUS)
-
-$(NAME_BONUS) : $(BONUS_OBJ)
-	$(CC) $(FLAG) $(BONUS_OBJ) $(MLX_UFLAGS) -o $(NAME_BONUS)
 
 clean :
 	rm -f $(OBJ) $(BONUS_OBJ)
