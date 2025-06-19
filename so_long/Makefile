@@ -1,6 +1,6 @@
-OBJ = soLong/main.o soLong/touls.o soLong/split.o soLong/check_map1.o\
-soLong/get_next_line.o soLong/get_next_line_utils.o soLong/check_map2.o soLong/imge_to_win.o\
-soLong/animation1.o soLong/imge_touls.o soLong/animation2.o
+OBJ = src/main.o src/touls.o src/split.o src/check_map1.o\
+src/get_next_line.o src/get_next_line_utils.o src/check_map2.o src/imge_to_win.o\
+src/animation1.o src/imge_touls.o src/animation2.o
 
 
 CC = gcc
