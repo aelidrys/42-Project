@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_so_long.c                                        :+:      :+:    :+:   */
+/*   b_so_long_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:42:55 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/01/29 08:49:51 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/01/29 08:48:28 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,23 @@ int	main(int a, char **av)
 {
 	t_gam	gam;
 
+	gam.m_x = 0;
+	gam.m_y = 0;
+	gam.x = 0;
 	gam.n = 0;
+	gam.n_sheps = 0;
 	gam.movs = 0;
+	gam.n_c = 0;
 	read_map(&gam, av[1], a);
 	gam.mlx = mlx_init();
 	a_xpm_to_imge(&gam, 0, 0);
 	gam.win = mlx_new_window(gam.mlx, a_lent(gam.map[0]) * 50,
 	arg_lent(gam.map) * 50, "WOLF & SHEEP");
 	std_gam(&gam);
+	printf("Welcome to WOLF & SHEEP\n");
 	gam.n_sheps = a_sersh_n(gam.map, 'C');
+	enmy_pos(&gam, 0, 0);
+	mlx_loop_hook(gam.mlx, a_animation, &gam);
 	mlx_hook(gam.win, 2, (1L<<0), a_event, &gam);
 	mlx_hook(gam.win, 17, (1L<<0), ft_exit, 0);
 	mlx_loop(gam.mlx);

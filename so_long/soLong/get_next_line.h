@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_get_next_line.h                                  :+:      :+:    :+:   */
+/*   b_get_next_line_bonus.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:35:43 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/01/31 08:34:06 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/01/31 08:33:39 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>

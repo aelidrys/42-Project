@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_check_map2.c                                     :+:      :+:    :+:   */
+/*   b_check_map2_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:34:10 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/01/29 08:49:36 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/01/29 08:48:47 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,32 @@ int	valid_path(t_gam *gam, int x, int y, int n)
 		return (-5);
 	if (a_sersh_n(gam->map1, 'C'))
 		return (-5);
+	return (check_enmy(gam, 0, 0));
+}
+
+int	check_enmy(t_gam *gam, int x, int y)
+{
+	while (gam->map1 && gam->map1[y])
+	{
+		x = 0;
+		while (gam->map1[y][x])
+		{
+			if ((gam->map1[y][x] == 'A' && (gam->map1[y][x + 1] == '1'
+				|| gam->map1[y][x + 1] == 'E') && (gam->map1[y][x - 1] == '1'
+				|| gam->map1[y][x - 1] == 'E')) || (gam->map1[y][x] == 'A'
+				&& (gam->map1[y + 1][x] == '1' || gam->map1[y + 1][x] == 'E')
+				&& (gam->map1[y - 1][x] == '1' || gam->map1[y - 1][x] == 'E')))
+				return (5);
+			if ((gam->map1[y][x] == 'A' && (gam->map1[y][x + 1] == '1'
+				|| gam->map1[y][x + 1] == 'E') && (gam->map1[y][x - 1] == '1'
+				|| gam->map1[y][x - 1] == 'E')) || (gam->map1[y][x] == 'A'
+				&& (gam->map1[y + 1][x] == '1' || gam->map1[y + 1][x] == 'E')
+				&& (gam->map1[y - 1][x] == '1' || gam->map1[y - 1][x] == 'E')))
+				return (5);
+			x++;
+		}
+		y++;
+	}
 	return (1);
 }
 
@@ -52,10 +78,8 @@ int	check_characters(t_gam *gam, int x, int y)
 		{
 			if (gam->map1[y][x] != '0' && gam->map1[y][x] != '1'
 				&& gam->map1[y][x] != 'C' && gam->map1[y][x] != 'E'
-				&& gam->map1[y][x] != 'P'){
-					printf("invalid character in map: %c\n", gam->map1[y][x]);
-					return (0);
-				}
+				&& gam->map1[y][x] != 'P' && gam->map1[y][x] != 'A')
+				return (0);
 		}
 	}
 	return (1);

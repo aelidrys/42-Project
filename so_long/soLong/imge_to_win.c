@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_imge_to_win.c                                    :+:      :+:    :+:   */
+/*   b_imge_to_win_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 08:45:55 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/01/29 08:49:40 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/01/29 08:48:52 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,15 @@ int	put_p(t_gam *gam, int x, int y, int k)
 
 int	put_img(t_gam *gam, int x, int y, int k)
 {
+	if (k == 'A')
+	{
+		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.n, x, y);
+		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.a1, x, y);
+	}
 	if (k == 'C')
 		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.c1, x, y);
+	if (k == 'c')
+		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.c2, x, y);
 	if (k == '1')
 		mlx_put_image_to_window(gam->mlx, gam->win, gam->img.w, x, y);
 	if (k == '0')
@@ -52,29 +59,49 @@ int	put_img(t_gam *gam, int x, int y, int k)
 
 void	sw1_img(t_gam *gam, int k, int c)
 {
-	gam->map[gam->p.y][gam->p.x] = '0';
+	if (c == 'P')
+	{
+		gam->map[gam->p.y][gam->p.x] = '0';
+		if (k == 'L')
+			put_img(gam, (gam->p.x--) * 50, gam->p.y * 50, '0');
+		if (k == 'R')
+			put_img(gam, (gam->p.x++) * 50, gam->p.y * 50, '0');
+		if (k == 'D')
+			put_img(gam, gam->p.x * 50, (gam->p.y++) * 50, '0');
+		if (k == 'U')
+			put_img(gam, gam->p.x * 50, (gam->p.y--) * 50, '0');
+		gam->map[gam->p.y][gam->p.x] = c;
+		put_p(gam, gam->p.x * 50, gam->p.y * 50, k);
+		return ;
+	}
+	gam->map[gam->a->y][gam->a->x] = '0';
 	if (k == 'L')
-		put_img(gam, (gam->p.x--) * 50, gam->p.y * 50, '0');
+		put_img(gam, (gam->a->x--) * 50, gam->a->y * 50, '0');
 	if (k == 'R')
-		put_img(gam, (gam->p.x++) * 50, gam->p.y * 50, '0');
+		put_img(gam, (gam->a->x++) * 50, gam->a->y * 50, '0');
 	if (k == 'D')
-		put_img(gam, gam->p.x * 50, (gam->p.y++) * 50, '0');
+		put_img(gam, gam->a->x * 50, (gam->a->y++) * 50, '0');
 	if (k == 'U')
-		put_img(gam, gam->p.x * 50, (gam->p.y--) * 50, '0');
-	gam->map[gam->p.y][gam->p.x] = c;
-	put_p(gam, gam->p.x * 50, gam->p.y * 50, k);
+		put_img(gam, gam->a->x * 50, (gam->a->y--) * 50, '0');
+	gam->map[gam->a->y][gam->a->x] = c;
 }
 
 void	plyr_movs(t_gam *gam, int x, int y, int s)
 {
-	gam->movs++;
+	char	p[12];
 	if (gam->map[y][x] == 'C'){
 		int count_c = a_sersh_n(gam->map, 'C');
 		printf("\rCollected Sheps: %d/%d", gam->n_sheps - (count_c - 1), gam->n_sheps);
 		fflush(stdout);
 	}
+	ft_itoa(++gam->movs, p);
+	mlx_put_image_to_window(gam->mlx, gam->win, gam->img.w, 0, 0);
+	mlx_put_image_to_window(gam->mlx, gam->win, gam->img.w, 0, 1);
+	mlx_string_put(gam->mlx, gam->win, 0, 0, 0x800000, p);
 	if (gam->map[y][x] == 'e')
 		print_str("YOU WIN\n");
+	if (gam->map[y][x] == 'A')
+		print_str("YOU LOST\n");
 	if (s == 0 || s == 1)
 	{
 		if (gam->b[s] == 3)
@@ -95,19 +122,11 @@ static int player_can_move(t_gam *gam, int x, int y)
 {
 	if (gam->map[y][x] == '1' || gam->map[y][x] == 'E')
 		return (0);
-
-	// if (gam->map[y][x] == 'C')
-	// {
-	// 	gam->n_c++;
-	// 	gam->map[y][x] = '0';
-	// 	put_img(gam, x * 50, y * 50, '0');
-	// }
 	return (1);
 }
 
 int	a_event(int k, t_gam *gam)
 {
-	// printf("key = %d\n", k);
 	if (k == 65307)
 		print_str("YOU ARE EXIT FROM THE GAME\n");
 	if (!a_sersh(gam->map, 'P', &gam->p.y, &gam->p.x))
@@ -126,5 +145,5 @@ int	a_event(int k, t_gam *gam)
 		gam->map[gam->m_y][gam->m_x] = 'e';
 		put_img(gam, gam->m_x * 50, gam->m_y * 50, 'e');
 	}
-	return (0);
+	return (k);
 }
