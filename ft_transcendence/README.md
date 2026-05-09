@@ -28,3 +28,4 @@ POSTGRES_PORT=5432
 ```
 
 - run `make`
+- go to `localhost:8082`
