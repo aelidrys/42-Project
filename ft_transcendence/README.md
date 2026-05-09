@@ -11,3 +11,18 @@
 
 <h3>Database schema</h3>
 <img src="Tournament/database_schema.png"></img>
+---
+## Run App
+- add a file named `.env` with this content bellow:
+``` sql
+SECRET_KEY=44edyh*y=h(yl0!*ru@)^yu9_+9^gb0!$g4!*426%eyye@#w0q
+
+# DB
+POSTGRES_NAME=postgsql
+POSTGRES_DB=postgsql
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_PORT=5432
+```
+
+- run `make`
