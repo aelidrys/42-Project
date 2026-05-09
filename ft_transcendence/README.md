@@ -11,7 +11,9 @@
 
 <h3>Database schema</h3>
 <img src="Tournament/database_schema.png"></img>
+
 ---
+
 ## Run App
 - add a file named `.env` with this content bellow:
 ``` sql
