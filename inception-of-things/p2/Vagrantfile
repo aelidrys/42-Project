@@ -1,0 +1,29 @@
+server_ip="192.168.56.110"
+
+Vagrant.configure("2") do |config|
+  config.vm.define "ubuntu-vm"
+  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.hostname = "ubuntu-vm"
+  config.vm.network "private_network", ip: server_ip
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.memory = "1024"
+    vb.cpus = 1
+  end
+
+  config.vm.provision "shell",
+    path: "script.sh",
+    env: { "node_ip" => server_ip }
+
+  config.vm.provision "shell", inline: <<-SHELL
+    set -e
+
+    echo "Waiting for k3s service to become active..."
+    until kubectl get nodes >/dev/null 2>&1; do
+      sleep 2
+    done
+
+    kubectl apply -f /vagrant/configs/
+  SHELL
+end

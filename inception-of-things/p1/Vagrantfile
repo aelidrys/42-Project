@@ -1,0 +1,75 @@
+SERVER_HOSTNAME = "aelidrysS"
+SERVER_IP       = "192.168.56.110"
+
+AGENT_HOSTNAME  = "aelidrysSW"
+AGENT_IP        = "192.168.56.111"
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/bookworm64"
+
+  # shared provider defaults 
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus   = 1
+    vb.memory = 1024
+  end
+
+  # common provisioning (runs on every node)
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   set -e
+  #   apt-get update -qq
+  #   apt-get install -y -qq curl
+
+  #   # Disable firewalld only if it exists (not present on Debian Bookworm)
+  #   systemctl disable firewalld --now 2>/dev/null || true
+
+  #   echo "alias k='kubectl'" >> /home/vagrant/.bashrc
+  #   # echo "alias c='clear'" >> /home/vagrant/.bashrc
+
+  #   echo "Done ...."
+  #   echo ">>> Common setup done."
+  # SHELL
+
+  # Server node
+  config.vm.define SERVER_HOSTNAME do |server|
+    server.vm.hostname = SERVER_HOSTNAME
+    server.vm.network "private_network", ip: SERVER_IP
+    server.vm.provision "shell", inline: <<-SHELL
+      apt-get update -y
+      apt-get install curl -y
+
+      echo ">>>---- Installing K3s server ----<<<<"
+      curl -sfL https://get.k3s.io | sh -
+
+      echo ">>>---- Saving node token ----<<<<"
+      cp /var/lib/rancher/k3s/server/node-token /vagrant/server_token.txt
+
+      echo ">>>***** K3s server installation complete  *****<<<<"
+    SHELL
+  end
+
+  # Agent (worker) node 
+  config.vm.define AGENT_HOSTNAME do |agent|
+    agent.vm.hostname = AGENT_HOSTNAME
+    agent.vm.network "private_network", ip: AGENT_IP
+    agent.vm.provision "shell", inline: <<-SHELL
+      apt-get update -y
+      apt-get install curl -y
+
+      echo ">>>> waiting  <<<<"
+
+      echo ">>> Waiting for token file..."
+      while [ ! -f /vagrant/server_token.txt ]; do
+        sleep 2
+      done
+
+      TOKEN=$(cat /vagrant/server_token.txt)
+
+      echo ">>>> Installing K3s agent  <<<<"
+      curl -sfL https://get.k3s.io | K3S_URL=https://#{SERVER_IP}:6443 K3S_TOKEN=$TOKEN sh -
+
+      echo ">>>----- K3s agent installation complete -----<<<<"
+    SHELL
+
+  end
+
+end

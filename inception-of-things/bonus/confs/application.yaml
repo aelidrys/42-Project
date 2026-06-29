@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitlab-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "http://192.168.56.10/user_01/iot_repo.git"
+    targetRevision: HEAD
+    path: manifests_files
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: gitlab
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
